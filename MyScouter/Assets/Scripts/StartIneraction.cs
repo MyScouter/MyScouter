@@ -8,7 +8,7 @@ public class StartIneraction : MonoBehaviour
     private GameObject player;
     private bool isClick;
     private bool showInteractMsg;
-
+    
     private GUIStyle guiStyle;
 
     private string msg;
@@ -22,9 +22,10 @@ public class StartIneraction : MonoBehaviour
     
     public void OnTriggerStay(Collider other)
     {
+       
         if (other.gameObject == player)     //player has collided with trigger
-        {  
-            Debug.Log("In collision"); 
+        {
+            ShowMassage.instanse.showMassage = false;
             showInteractMsg = true;
             if (Input.GetKey(KeyCode.F) && isClick)
             {
@@ -42,6 +43,7 @@ public class StartIneraction : MonoBehaviour
             //hide interact message as player may not have been looking at object when they left
             showInteractMsg = false;
             isClick = true;
+            ShowMassage.instanse.showMassage = true;
         }
     }
 
