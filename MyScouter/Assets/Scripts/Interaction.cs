@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Cradle;
 
 public class Interaction : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class Interaction : MonoBehaviour
     protected GUIStyle guiStyle;
 
     protected string msg;
+    public GameObject background;
+    public GameObject TestConverstion;
 
     private void Awake()
     {
@@ -26,7 +30,13 @@ public class Interaction : MonoBehaviour
             showInteractMsg = true;
             if (Input.GetKey(KeyCode.F) && !isClicked)
             {
+                background.SetActive(true);
+                TestConverstion.SetActive(true);
+                NPC.instance.GoToPassage();
+                NPC.instance.Active();
+                //NPC.instance.story.Output.ForEach(e => Debug.Log(e));
                 isClicked = true;
+                UnityEngine.Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -38,13 +48,28 @@ public class Interaction : MonoBehaviour
             //hide interact message as player may not have been looking at object when they left
             showInteractMsg = false;
             isClicked = false;
+            background.SetActive(false);
+            TestConverstion.SetActive(false);
+            NPC.instance.ShotDown();
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+
         }
+    }
+    void stroy_OnOutput(StoryOutput output)
+    {
+        /*if (output.Text.Equals(""))
+        {
+
+        }*/
+        Debug.Log(output.Text);
     }
 
     private void Update()
     {
-      
-       
+        
+
+
     }
 
 
