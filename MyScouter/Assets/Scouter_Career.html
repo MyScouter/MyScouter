@@ -33,7 +33,8 @@ $canPlay to false,
 $loanRound to 0,
 $daysToReturn to 0,
 $waitTime to -1,
-$isLoan to false
+$isLoan to false,
+$fromScene to &quot;&quot;
 )</tw-passagedata><tw-passagedata pid="3" name="Other Calls" tags="" position="301,302" size="100,100">$Helper Hi Again! Did you look around enough? Would you want to call now?
 [[No, not yet.. -&gt;Other Calls]] 
 [[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="272.66666666666663,526.3333333333333" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
@@ -57,7 +58,7 @@ $isLoan to false
 (set: $hunger to 40)
 (set: $tiredness to 40)
 
-(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="Rest" position="200.33333333333334,996.6666666666666" size="100,100">&lt;!--Player sleeping..--&gt; 
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="activity" position="200.33333333333334,996.6666666666666" size="100,100">&lt;!--Player sleeping..--&gt; 
 
 (if: $tiredness &gt;= 20)[(set: $tiredness to $tiredness - 20)]
 (else:)[(set: $tiredness to 0)]
@@ -66,7 +67,8 @@ $isLoan to false
 (if: $hunger &lt;= 90)[(set: $hunger to $hunger + 10)]
 (else:)[(set: $hunger to 100)]
 (set: $flagNum to 1)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="Workout" position="597,997" size="100,100">&lt;!--Player workingout..--&gt;
+(set: $fromScene to &quot;Player Resting&quot;)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="activity" position="597,997" size="100,100">&lt;!--Player workingout..--&gt;
 (if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
 (else:)[(set: $tiredness to 100)]
 
@@ -85,7 +87,8 @@ $isLoan to false
 (else:)[I wish I could go out right now..(if: $happiness &gt;= 5)[(set: $happiness to $happiness - 5)](else:)[(set: $happiness to 0)]]
 
 (set: $flagNum to 2)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="Practice" position="1000,1002" size="100,100">&lt;!--Player workingout..--&gt;
+(set: $fromScene to &quot;Player Workout&quot;)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="activity" position="1000,1002" size="100,100">&lt;!--Player workingout..--&gt;
 (if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
 (else:)[(set: $tiredness to 100)]
 
@@ -105,7 +108,8 @@ $isLoan to false
 (else:)[(set: $happiness to 0)]]
 
 (set: $flagNum to 2)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="10" name="Player Eating" tags="Eat" position="1401,1002" size="100,100">&lt;!--Player eating..--&gt;
+(set: $fromScene to &quot;Player Practice&quot;)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="10" name="Player Eating" tags="activity" position="1401,1002" size="100,100">&lt;!--Player eating..--&gt;
 (if: $physicalShape &gt;= 5)[(set: $physicalShape to $physicalShape - 5)]
 (else:)[(set: $physicalShape to 0)]
 
@@ -122,7 +126,8 @@ $isLoan to false
 (else:)[(set: $tiredness to 100)]
 	
 (set: $flagNum to 4)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="11" name="Player Outing" tags="" position="1799,1000" size="100,100">&lt;!--Player outing..--&gt;
+(set: $fromScene to &quot;Player Eating&quot;)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="11" name="Player Outing" tags="activity" position="1799,1000" size="100,100">&lt;!--Player outing..--&gt;
 (if: $physicalShape &gt;= 10)[(set: $physicalShape to $physicalShape - 10)]
 (else:)[(set: $physicalShape to 0)]
 
@@ -136,6 +141,7 @@ $isLoan to false
 (else:)[(set: $happiness to 100)]
 
 (set: $flagNum to 5)
+(set: $fromScene to &quot;Player Outing&quot;)
 (goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="12" name="Calculate Goal" tags="goalCalculation" position="1890.3333333333333,103" size="100,100">(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)
 
 (set: $waitTime to $waitTime + 1)

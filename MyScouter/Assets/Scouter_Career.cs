@@ -38,6 +38,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 			VarDef("daysToReturn", () => this.@daysToReturn, val => this.@daysToReturn = val);
 			VarDef("waitTime", () => this.@waitTime, val => this.@waitTime = val);
 			VarDef("isLoan", () => this.@isLoan, val => this.@isLoan = val);
+			VarDef("fromScene", () => this.@fromScene, val => this.@fromScene = val);
 			VarDef("motivation", () => this.@motivation, val => this.@motivation = val);
 			VarDef("physicalShape", () => this.@physicalShape, val => this.@physicalShape = val);
 			VarDef("happiness", () => this.@happiness, val => this.@happiness = val);
@@ -66,6 +67,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		public StoryVar @daysToReturn;
 		public StoryVar @waitTime;
 		public StoryVar @isLoan;
+		public StoryVar @fromScene;
 		public StoryVar @motivation;
 		public StoryVar @physicalShape;
 		public StoryVar @happiness;
@@ -192,7 +194,8 @@ Vars.canPlay  = false;
 Vars.loanRound  = 0; 
 Vars.daysToReturn  = 0; 
 Vars.waitTime  = -1; 
-Vars.isLoan  = false
+Vars.isLoan  = false; 
+Vars.fromScene  = ""
 ;
 		yield break;
 	}
@@ -309,7 +312,7 @@ Vars.isLoan  = false
 
 	void passage7_Init()
 	{
-		this.Passages[@"Player Resting"] = new StoryPassage(@"Player Resting", new string[]{ "Rest", }, passage7_Main);
+		this.Passages[@"Player Resting"] = new StoryPassage(@"Player Resting", new string[]{ "activity", }, passage7_Main);
 	}
 
 	IStoryThread passage7_Main()
@@ -340,6 +343,8 @@ Vars.isLoan  = false
 		yield return lineBreak();
 		Vars.flagNum  = 1;
 		yield return lineBreak();
+		Vars.fromScene  = "Player Resting";
+		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
 	}
@@ -350,7 +355,7 @@ Vars.isLoan  = false
 
 	void passage8_Init()
 	{
-		this.Passages[@"Player Workout"] = new StoryPassage(@"Player Workout", new string[]{ "Workout", }, passage8_Main);
+		this.Passages[@"Player Workout"] = new StoryPassage(@"Player Workout", new string[]{ "activity", }, passage8_Main);
 	}
 
 	IStoryThread passage8_Main()
@@ -411,6 +416,8 @@ Vars.isLoan  = false
 		yield return lineBreak();
 		Vars.flagNum  = 2;
 		yield return lineBreak();
+		Vars.fromScene  = "Player Workout";
+		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
 	}
@@ -421,7 +428,7 @@ Vars.isLoan  = false
 
 	void passage9_Init()
 	{
-		this.Passages[@"Player Practice"] = new StoryPassage(@"Player Practice", new string[]{ "Practice", }, passage9_Main);
+		this.Passages[@"Player Practice"] = new StoryPassage(@"Player Practice", new string[]{ "activity", }, passage9_Main);
 	}
 
 	IStoryThread passage9_Main()
@@ -483,6 +490,8 @@ Vars.isLoan  = false
 		yield return lineBreak();
 		Vars.flagNum  = 2;
 		yield return lineBreak();
+		Vars.fromScene  = "Player Practice";
+		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
 	}
@@ -493,7 +502,7 @@ Vars.isLoan  = false
 
 	void passage10_Init()
 	{
-		this.Passages[@"Player Eating"] = new StoryPassage(@"Player Eating", new string[]{ "Eat", }, passage10_Main);
+		this.Passages[@"Player Eating"] = new StoryPassage(@"Player Eating", new string[]{ "activity", }, passage10_Main);
 	}
 
 	IStoryThread passage10_Main()
@@ -542,6 +551,8 @@ Vars.isLoan  = false
 		yield return lineBreak();
 		Vars.flagNum  = 4;
 		yield return lineBreak();
+		Vars.fromScene  = "Player Eating";
+		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
 	}
@@ -552,7 +563,7 @@ Vars.isLoan  = false
 
 	void passage11_Init()
 	{
-		this.Passages[@"Player Outing"] = new StoryPassage(@"Player Outing", new string[]{  }, passage11_Main);
+		this.Passages[@"Player Outing"] = new StoryPassage(@"Player Outing", new string[]{ "activity", }, passage11_Main);
 	}
 
 	IStoryThread passage11_Main()
@@ -591,6 +602,8 @@ Vars.isLoan  = false
 		yield return lineBreak();
 		yield return lineBreak();
 		Vars.flagNum  = 5;
+		yield return lineBreak();
+		Vars.fromScene  = "Player Outing";
 		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;

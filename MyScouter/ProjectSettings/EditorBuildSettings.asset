@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/HouseScene.unity
+    path: Assets/Scenes/HouseScene.unity
     guid: c0824ea29c50141dc8f1ff6044287126
   - enabled: 1
     path: Assets/PlayerMeeting.unity

@@ -16,5 +16,5 @@ public class SaveVar : MonoBehaviour
 
     #endregion
 
-    public string currentPassage;
+    public Transform[] goToPositions;
 }

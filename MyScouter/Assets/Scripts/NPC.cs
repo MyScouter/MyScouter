@@ -35,7 +35,7 @@ public class NPC : MonoBehaviour
         if (active)
         {
             currentPassage = story.CurrentPassage.Name;
-           
+            
         }
     }
     public void GoToPassage()
@@ -50,4 +50,5 @@ public class NPC : MonoBehaviour
     {
         active = false;
     }
+
 }

@@ -324,9 +324,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false\n",
+                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\"\n",
                         "name": "set",
-                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false\n)",
+                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\"\n)",
                         "tokens": [
                             {
                                 "text": "set:",
@@ -656,6 +656,35 @@
                             {
                                 "text": "false",
                                 "type": "boolean"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "\"\"",
+                                "type": "string"
                             },
                             {
                                 "text": "\n",
@@ -2052,7 +2081,7 @@
             {
                 "Name": "Player Resting",
                 "Pid": "7",
-                "Tags": "Rest",
+                "Tags": "activity",
                 "Tokens": [
                     {
                         "innerText": "Player sleeping..",
@@ -2613,6 +2642,48 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "set: $fromScene to \"Player Resting\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Resting\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Resting",
+                                "text": "\"Player Resting\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "goto: \"Calculate Goal\"",
                         "name": "goto",
                         "text": "(goto: \"Calculate Goal\")",
@@ -2638,7 +2709,7 @@
             {
                 "Name": "Player Workout",
                 "Pid": "8",
-                "Tags": "Workout",
+                "Tags": "activity",
                 "Tokens": [
                     {
                         "innerText": "Player workingout..",
@@ -3783,6 +3854,48 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "set: $fromScene to \"Player Workout\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Workout\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Workout",
+                                "text": "\"Player Workout\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "goto: \"Calculate Goal\"",
                         "name": "goto",
                         "text": "(goto: \"Calculate Goal\")",
@@ -3808,7 +3921,7 @@
             {
                 "Name": "Player Practice",
                 "Pid": "9",
-                "Tags": "Practice",
+                "Tags": "activity",
                 "Tokens": [
                     {
                         "innerText": "Player workingout..",
@@ -4957,6 +5070,48 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "set: $fromScene to \"Player Practice\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Practice\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Practice",
+                                "text": "\"Player Practice\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "goto: \"Calculate Goal\"",
                         "name": "goto",
                         "text": "(goto: \"Calculate Goal\")",
@@ -4982,7 +5137,7 @@
             {
                 "Name": "Player Eating",
                 "Pid": "10",
-                "Tags": "Eat",
+                "Tags": "activity",
                 "Tokens": [
                     {
                         "innerText": "Player eating..",
@@ -5889,6 +6044,48 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "set: $fromScene to \"Player Eating\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Eating\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Eating",
+                                "text": "\"Player Eating\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "goto: \"Calculate Goal\"",
                         "name": "goto",
                         "text": "(goto: \"Calculate Goal\")",
@@ -5914,7 +6111,7 @@
             {
                 "Name": "Player Outing",
                 "Pid": "11",
-                "Tags": "",
+                "Tags": "activity",
                 "Tokens": [
                     {
                         "innerText": "Player outing..",
@@ -6640,6 +6837,48 @@
                                 "text": "5",
                                 "type": "number",
                                 "value": 5
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $fromScene to \"Player Outing\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Outing\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Outing",
+                                "text": "\"Player Outing\"",
+                                "type": "string"
                             }
                         ],
                         "type": "macro"

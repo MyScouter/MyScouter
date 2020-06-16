@@ -8,6 +8,7 @@ public class Interaction : MonoBehaviour
 {
    [SerializeField]
     protected GameObject player;
+
     protected bool isClicked;
     protected bool showInteractMsg;
     
