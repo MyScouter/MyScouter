@@ -324,9 +324,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false\n",
+                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false\n",
                         "name": "set",
-                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false\n)",
+                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false\n)",
                         "tokens": [
                             {
                                 "text": "set:",
@@ -518,6 +518,127 @@
                             {
                                 "name": "canPlay",
                                 "text": "$canPlay",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "false",
+                                "type": "boolean"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "loanRound",
+                                "text": "$loanRound",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "0",
+                                "type": "number"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "daysToReturn",
+                                "text": "$daysToReturn",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "0",
+                                "type": "number"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "waitTime",
+                                "text": "$waitTime",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "-",
+                                "type": "subtraction"
+                            },
+                            {
+                                "text": "1",
+                                "type": "number",
+                                "value": 1
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "isLoan",
+                                "text": "$isLoan",
                                 "type": "variable"
                             },
                             {
@@ -881,6 +1002,184 @@
                             }
                         ],
                         "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5",
+                        "name": "set",
+                        "text": "(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "goal",
+                                "text": "$goal",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "$motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness)",
+                                "text": "($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))",
+                                "tokens": [
+                                    {
+                                        "name": "motivation",
+                                        "text": "$motivation",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "physicalShape",
+                                        "text": "$physicalShape",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "happiness",
+                                        "text": "$happiness",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $hunger",
+                                        "text": "(100 - $hunger)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $tiredness",
+                                        "text": "(100 - $tiredness)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    }
+                                ],
+                                "type": "grouping"
+                            },
+                            {
+                                "text": "/",
+                                "type": "division"
+                            },
+                            {
+                                "text": "5",
+                                "type": "number",
+                                "value": 5
+                            }
+                        ],
+                        "type": "macro"
                     }
                 ]
             },
@@ -1136,6 +1435,184 @@
                             }
                         ],
                         "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5",
+                        "name": "set",
+                        "text": "(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "goal",
+                                "text": "$goal",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "$motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness)",
+                                "text": "($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))",
+                                "tokens": [
+                                    {
+                                        "name": "motivation",
+                                        "text": "$motivation",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "physicalShape",
+                                        "text": "$physicalShape",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "happiness",
+                                        "text": "$happiness",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $hunger",
+                                        "text": "(100 - $hunger)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $tiredness",
+                                        "text": "(100 - $tiredness)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    }
+                                ],
+                                "type": "grouping"
+                            },
+                            {
+                                "text": "/",
+                                "type": "division"
+                            },
+                            {
+                                "text": "5",
+                                "type": "number",
+                                "value": 5
+                            }
+                        ],
+                        "type": "macro"
                     }
                 ]
             },
@@ -1388,6 +1865,184 @@
                                 "text": "40",
                                 "type": "number",
                                 "value": 40
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5",
+                        "name": "set",
+                        "text": "(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "goal",
+                                "text": "$goal",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "$motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness)",
+                                "text": "($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))",
+                                "tokens": [
+                                    {
+                                        "name": "motivation",
+                                        "text": "$motivation",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "physicalShape",
+                                        "text": "$physicalShape",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "happiness",
+                                        "text": "$happiness",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $hunger",
+                                        "text": "(100 - $hunger)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "+",
+                                        "type": "addition"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "innerText": "100 - $tiredness",
+                                        "text": "(100 - $tiredness)",
+                                        "tokens": [
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "-",
+                                                "type": "subtraction"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
+                                                "type": "variable"
+                                            }
+                                        ],
+                                        "type": "grouping"
+                                    }
+                                ],
+                                "type": "grouping"
+                            },
+                            {
+                                "text": "/",
+                                "type": "division"
+                            },
+                            {
+                                "text": "5",
+                                "type": "number",
+                                "value": 5
                             }
                         ],
                         "type": "macro"
@@ -1910,14 +2565,6 @@
                             }
                         ],
                         "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\t",
-                        "type": "text"
                     },
                     {
                         "text": "\n",
@@ -6204,6 +6851,10 @@
                         "type": "br"
                     },
                     {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "set: $waitTime to $waitTime + 1",
                         "name": "set",
                         "text": "(set: $waitTime to $waitTime + 1)",
@@ -8622,35 +9273,6 @@
                             }
                         ],
                         "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "goto: \"After Activity\"",
-                        "name": "goto",
-                        "text": "(goto: \"After Activity\")",
-                        "tokens": [
-                            {
-                                "text": "goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "innerText": "After Activity",
-                                "text": "\"After Activity\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
                     }
                 ]
             },

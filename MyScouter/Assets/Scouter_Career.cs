@@ -34,17 +34,17 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 			VarDef("isOut", () => this.@isOut, val => this.@isOut = val);
 			VarDef("moneyAmount", () => this.@moneyAmount, val => this.@moneyAmount = val);
 			VarDef("canPlay", () => this.@canPlay, val => this.@canPlay = val);
+			VarDef("loanRound", () => this.@loanRound, val => this.@loanRound = val);
+			VarDef("daysToReturn", () => this.@daysToReturn, val => this.@daysToReturn = val);
+			VarDef("waitTime", () => this.@waitTime, val => this.@waitTime = val);
+			VarDef("isLoan", () => this.@isLoan, val => this.@isLoan = val);
 			VarDef("motivation", () => this.@motivation, val => this.@motivation = val);
 			VarDef("physicalShape", () => this.@physicalShape, val => this.@physicalShape = val);
 			VarDef("happiness", () => this.@happiness, val => this.@happiness = val);
 			VarDef("hunger", () => this.@hunger, val => this.@hunger = val);
 			VarDef("tiredness", () => this.@tiredness, val => this.@tiredness = val);
-			VarDef("flagNum", () => this.@flagNum, val => this.@flagNum = val);
 			VarDef("goal", () => this.@goal, val => this.@goal = val);
-			VarDef("waitTime", () => this.@waitTime, val => this.@waitTime = val);
-			VarDef("isLoan", () => this.@isLoan, val => this.@isLoan = val);
-			VarDef("loanRound", () => this.@loanRound, val => this.@loanRound = val);
-			VarDef("daysToReturn", () => this.@daysToReturn, val => this.@daysToReturn = val);
+			VarDef("flagNum", () => this.@flagNum, val => this.@flagNum = val);
 			VarDef("rcOne", () => this.@rcOne, val => this.@rcOne = val);
 			VarDef("rcTwo", () => this.@rcTwo, val => this.@rcTwo = val);
 			VarDef("rcThree", () => this.@rcThree, val => this.@rcThree = val);
@@ -62,17 +62,17 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		public StoryVar @isOut;
 		public StoryVar @moneyAmount;
 		public StoryVar @canPlay;
+		public StoryVar @loanRound;
+		public StoryVar @daysToReturn;
+		public StoryVar @waitTime;
+		public StoryVar @isLoan;
 		public StoryVar @motivation;
 		public StoryVar @physicalShape;
 		public StoryVar @happiness;
 		public StoryVar @hunger;
 		public StoryVar @tiredness;
-		public StoryVar @flagNum;
 		public StoryVar @goal;
-		public StoryVar @waitTime;
-		public StoryVar @isLoan;
-		public StoryVar @loanRound;
-		public StoryVar @daysToReturn;
+		public StoryVar @flagNum;
 		public StoryVar @rcOne;
 		public StoryVar @rcTwo;
 		public StoryVar @rcThree;
@@ -188,7 +188,11 @@ Vars.isPractice  = false;
 Vars.isEating  = false; 
 Vars.isOut  = false; 
 Vars.moneyAmount  = 500; 
-Vars.canPlay  = false
+Vars.canPlay  = false; 
+Vars.loanRound  = 0; 
+Vars.daysToReturn  = 0; 
+Vars.waitTime  = -1; 
+Vars.isLoan  = false
 ;
 		yield break;
 	}
@@ -237,6 +241,9 @@ Vars.canPlay  = false
 		Vars.hunger  = 40;
 		yield return lineBreak();
 		Vars.tiredness  = 40;
+		yield return lineBreak();
+		yield return lineBreak();
+		Vars.goal  = (Vars.motivation + Vars.physicalShape + Vars.happiness + (100 - Vars.hunger) + (100 - Vars.tiredness))/5;
 		yield break;
 	}
 
@@ -262,6 +269,9 @@ Vars.canPlay  = false
 		Vars.hunger  = 40;
 		yield return lineBreak();
 		Vars.tiredness  = 40;
+		yield return lineBreak();
+		yield return lineBreak();
+		Vars.goal  = (Vars.motivation + Vars.physicalShape + Vars.happiness + (100 - Vars.hunger) + (100 - Vars.tiredness))/5;
 		yield break;
 	}
 
@@ -287,6 +297,9 @@ Vars.canPlay  = false
 		Vars.hunger  = 40;
 		yield return lineBreak();
 		Vars.tiredness  = 40;
+		yield return lineBreak();
+		yield return lineBreak();
+		Vars.goal  = (Vars.motivation + Vars.physicalShape + Vars.happiness + (100 - Vars.hunger) + (100 - Vars.tiredness))/5;
 		yield break;
 	}
 
@@ -324,8 +337,6 @@ Vars.canPlay  = false
 		else {
 			Vars.hunger  = 100;
 		}
-		yield return lineBreak();
-		yield return text("	");
 		yield return lineBreak();
 		Vars.flagNum  = 1;
 		yield return lineBreak();
@@ -598,6 +609,7 @@ Vars.canPlay  = false
 	{
 		Vars.goal  = (Vars.motivation + Vars.physicalShape + Vars.happiness + (100 - Vars.hunger) + (100 - Vars.tiredness))/5;
 		yield return lineBreak();
+		yield return lineBreak();
 		Vars.waitTime  = Vars.waitTime + 1;
 		yield return lineBreak();
 		if(Vars.isLoan == true) {
@@ -755,9 +767,6 @@ Vars.canPlay  = false
 		else {
 			Vars.canPlay  = false;
 		}
-		yield return lineBreak();
-		yield return lineBreak();
-		yield return abort(goToPassage: "After Activity");
 		yield break;
 	}
 

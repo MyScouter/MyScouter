@@ -7,6 +7,7 @@ TagManager:
   - SmartPhone
   - Background
   - ScrollView
+  - Canvas
   layers:
   - Default
   - TransparentFX

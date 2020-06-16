@@ -15,7 +15,7 @@
 (set: $Helper to &quot;Secretary:&quot;)
 $Helper Hi $ScouterName, How are you Today? do you want to recruit a new player?
 [[I&#39;m good! Not yet, I want to look around my new house a bit.. -&gt;Other Calls]]
-[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="800,296" size="100,100">Who would you like to recruit Ms. John?
+[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="800,294.3333333333333" size="100,100">Who would you like to recruit Ms. John?
 [[Fernandinez Horasio, In great shape but not so motivated.. -&gt;Hello Fernandinez]]
 [[Van Bluchten, Very motivated but not in the best shape.. -&gt;Hello Van]]
 [[Dembalio Grizman, Pretty average in both motivation and shape -&gt;Hello Dembalio]]
@@ -29,25 +29,35 @@ $isPractice to false,
 $isEating to false,
 $isOut to false,
 $moneyAmount to 500,
-$canPlay to false
+$canPlay to false,
+$loanRound to 0,
+$daysToReturn to 0,
+$waitTime to -1,
+$isLoan to false
 )</tw-passagedata><tw-passagedata pid="3" name="Other Calls" tags="" position="301,302" size="100,100">$Helper Hi Again! Did you look around enough? Would you want to call now?
 [[No, not yet.. -&gt;Other Calls]] 
-[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="586,503" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
+[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="272.66666666666663,526.3333333333333" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
 (set: $motivation to 30)
 (set: $physicalShape to 70)
 (set: $happiness to 50)
 (set: $hunger to 40)
-(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="743,500" size="100,100">(set: $playerName to &quot;Van&quot;)
+(set: $tiredness to 40)
+
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="576.3333333333333,506.6666666666667" size="100,100">(set: $playerName to &quot;Van&quot;)
 (set: $motivation to 70)
 (set: $physicalShape to 30)
 (set: $happiness to 50)
 (set: $hunger to 40)
-(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="898,499" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
+(set: $tiredness to 40)
+
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="843,504.00000000000006" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
 (set: $motivation to 50)
 (set: $physicalShape to 50)
 (set: $happiness to 50)
 (set: $hunger to 40)
-(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="Rest" position="197,1000" size="100,100">&lt;!--Player sleeping..--&gt; 
+(set: $tiredness to 40)
+
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="Rest" position="200.33333333333334,996.6666666666666" size="100,100">&lt;!--Player sleeping..--&gt; 
 
 (if: $tiredness &gt;= 20)[(set: $tiredness to $tiredness - 20)]
 (else:)[(set: $tiredness to 0)]
@@ -55,7 +65,6 @@ $canPlay to false
 (else:)[(set: $physicalShape to 0)]
 (if: $hunger &lt;= 90)[(set: $hunger to $hunger + 10)]
 (else:)[(set: $hunger to 100)]
-	
 (set: $flagNum to 1)
 (goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="Workout" position="597,997" size="100,100">&lt;!--Player workingout..--&gt;
 (if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
@@ -127,7 +136,8 @@ $canPlay to false
 (else:)[(set: $happiness to 100)]
 
 (set: $flagNum to 5)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="12" name="Calculate Goal" tags="goalCalculation" position="1892,103" size="100,100">(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="12" name="Calculate Goal" tags="goalCalculation" position="1890.3333333333333,103" size="100,100">(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)
+
 (set: $waitTime to $waitTime + 1)
 (if:$isLoan is true)[(set: $loanRound to $loanRound + 1)]
 (if: $goal &gt; 95)[(goto: &quot;End Game&quot;)]
@@ -141,7 +151,7 @@ $canPlay to false
 (if: $isOut is false)[[[Go party!!-&gt;Player Outing]]]
 (if: $canPlay is true)[[[Game Time!-&gt;Player Game]]]
 (if: $moneyAmount &lt;= 0)[[[I need a loan..-&gt;Loan Money]]]
-(if: $isLoan is true)[[[I need to see if I can pay back..-&gt;Return Loan]]]</tw-passagedata><tw-passagedata pid="14" name="Reset flags" tags="" position="1996,203" size="100,100">(set: $isTired to false, $isWorkout to false, $isPractice to false, $isEating to false, $isOut to false)
+(if: $isLoan is true)[[[I need to see if I can pay back..-&gt;Return Loan]]]</tw-passagedata><tw-passagedata pid="14" name="Reset flags" tags="" position="1996,104.66666666666666" size="100,100">(set: $isTired to false, $isWorkout to false, $isPractice to false, $isEating to false, $isOut to false)
 
 (if: $flagNum is 1)[(set: $isTired to true)]
 (else-if: $flagNum is 2)[(set: $isWorkout to true)]
@@ -158,10 +168,8 @@ $canPlay to false
 (set: $avrChance to ( $rcOne + $rcTwo + $rcThree)/3)
 
 (if: $goal &gt; $avrChance)[(goto: &quot;Game Won&quot;)]
-(else:)[(goto: &quot;Game Lost&quot;)]</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2101,300" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
-(else:)[(set: $canPlay to false)]
-
-(goto: &quot;After Activity&quot;)</tw-passagedata><tw-passagedata pid="17" name="Game Won" tags="game" position="2100,1300" size="100,100">Congrutalions!! you&#39;ve won the match!!
+(else:)[(goto: &quot;Game Lost&quot;)]</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2099.3333333333335,101.66666666666666" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
+(else:)[(set: $canPlay to false)]</tw-passagedata><tw-passagedata pid="17" name="Game Won" tags="game" position="2100,1300" size="100,100">Congrutalions!! you&#39;ve won the match!!
 
 (set: $moneyAmount to $moneyAmount + 400)
 
@@ -215,7 +223,7 @@ Banker: The amount you need to pay is $amountToReturn..
 (if: $amountToReturn &lt;= $moneyAmount)[Loan has been Payed.. (set: $moneyAmount to $moneyAmount - $amountToReturn, $isLoan to false)]
 (else:)[You don&#39;t have enough money..]
 
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata><tw-passagedata pid="26" name="Hello Player" tags="meetPlayer" position="996,1472.3333333333333" size="100,100">Hi $playerName, it&#39;s $ScouterName How are you today?
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata><tw-passagedata pid="26" name="Hello Player" tags="meetPlayer" position="991,1470.6666666666665" size="100,100">Hi $playerName, it&#39;s $ScouterName How are you today?
 $playerName: I&#39;m Great! can&#39;t wait to start our journey together!
 $ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
 $playerName: I was debating between these options, let me know what you think!

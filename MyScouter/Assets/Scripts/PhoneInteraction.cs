@@ -6,14 +6,16 @@ using UnityEngine.UIElements;
 
 public class PhoneInteraction : Interaction
 {
-    
+    public GameObject player1;
+    public Transform moveTo;
+
     private void Awake() {
         base.isClicked = false;
         base.setupGui();
     }
     public override void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == player)     //player has collided with trigger
+        if (other.gameObject == player1)     //player has collided with trigger
         {
             showInteractMsg = true;
             if (Input.GetKey(KeyCode.F) && !isClicked)
@@ -36,17 +38,26 @@ public class PhoneInteraction : Interaction
     {
         if (NPC.instance.active)
         {
-            this.currentPassage = NPC.instance.currentPassage;
-            if (currentPassage.Contains("Hello"))
+           
+            if (NPC.instance.currentPassage.Contains("Hello") && !NPC.instance.currentPassage.Equals("Hello Player"))
             {
+                TextController.instance.isInstantiated = true;
+                TextController.instance.updateScore = true;
                 showInteractMsg = false;
                 background.SetActive(false);
                 TestConverstion.SetActive(false);
+                //base.player.SetActive(false);
+                Debug.Log("Before moving: " + player1.transform.position);
+                player1.transform.position = moveTo.position;
+                Debug.Log("After moving: " + player1.transform.position);
+                // base.player.SetActive(true);
+                //Debug.Log(TextController.instance.isInstantiated);
                 NPC.instance.ShotDown();
-                SaveVar.instance.currentPassage = NPC.instance.currentPassage;
-                SceneManagerGame.instance.LoadNextScene(1);
+                NPC.instance.currentPassage = "Hello Player";
+                ShowMassage.instanse.changingMsg = "Please go talk to player";
+                ShowMassage.instanse.showMassage = true;
+                
             }
-
         }
     }
 
