@@ -32,47 +32,17 @@ $moneyAmount to 500,
 $canPlay to false
 )</tw-passagedata><tw-passagedata pid="3" name="Other Calls" tags="" position="301,302" size="100,100">$Helper Hi Again! Did you look around enough? Would you want to call now?
 [[No, not yet.. -&gt;Other Calls]] 
-[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="396,505" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
-Hi $playerName, it&#39;s $ScouterName How are you today?
-$playerName: I&#39;m Great! can&#39;t wait to start our journey together!
-$ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
-$playerName: I was debating between these options, let me know what you think!
-[[Get some rest.. -&gt;Player Resting]]
-[[Go workout.. -&gt;Player Workout]]
-[[Go practice.. -&gt;Player Practice]]
-[[Go eat something.. -&gt;Player Eating]]
-[[Go party!! -&gt;Player Outing]]
-
+[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="586,503" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
 (set: $motivation to 30)
 (set: $physicalShape to 70)
 (set: $happiness to 50)
 (set: $hunger to 40)
-(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="795,502" size="100,100">(set: $playerName to &quot;Van&quot;)
-Hi $playerName, it&#39;s $ScouterName How are you today?
-$playerName: I&#39;m Great! can&#39;t wait to start our journey together!
-$ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
-$playerName: I was debating between these options, let me know what you think!
-[[Get some rest.. -&gt;Player Resting]]
-[[Go workout.. -&gt;Player Workout]]
-[[Go practice.. -&gt;Player Practice]]
-[[Go eat something.. -&gt;Player Eating]]
-[[Go party!! -&gt;Player Outing]]
-
+(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="743,500" size="100,100">(set: $playerName to &quot;Van&quot;)
 (set: $motivation to 70)
 (set: $physicalShape to 30)
 (set: $happiness to 50)
 (set: $hunger to 40)
-(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="1198,504" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
-Hi $playerName, it&#39;s $ScouterName How are you today?
-$playerName: I&#39;m Great! can&#39;t wait to start our journey together!
-$ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
-$playerName: I was debating between these options, let me know what you think!
-[[Get some rest.. -&gt;Player Resting]]
-[[Go workout.. -&gt;Player Workout]]
-[[Go practice.. -&gt;Player Practice]]
-[[Go eat something.. -&gt;Player Eating]]
-[[Go party!! -&gt;Player Outing]]
-
+(set: $tiredness to 40)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="898,499" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
 (set: $motivation to 50)
 (set: $physicalShape to 50)
 (set: $happiness to 50)
@@ -245,7 +215,16 @@ Banker: The amount you need to pay is $amountToReturn..
 (if: $amountToReturn &lt;= $moneyAmount)[Loan has been Payed.. (set: $moneyAmount to $moneyAmount - $amountToReturn, $isLoan to false)]
 (else:)[You don&#39;t have enough money..]
 
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata></tw-storydata>
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata><tw-passagedata pid="26" name="Hello Player" tags="meetPlayer" position="996,1472.3333333333333" size="100,100">Hi $playerName, it&#39;s $ScouterName How are you today?
+$playerName: I&#39;m Great! can&#39;t wait to start our journey together!
+$ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
+$playerName: I was debating between these options, let me know what you think!
+
+[[Get some rest.. -&gt;Player Resting]]
+[[Go workout.. -&gt;Player Workout]]
+[[Go practice.. -&gt;Player Practice]]
+[[Go eat something.. -&gt;Player Eating]]
+[[Go party!! -&gt;Player Outing]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

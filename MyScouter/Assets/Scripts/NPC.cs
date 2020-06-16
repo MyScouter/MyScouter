@@ -7,7 +7,6 @@ public class NPC : MonoBehaviour
     public static NPC instance;
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (instance != null)
             return;
         instance = this;
@@ -18,13 +17,16 @@ public class NPC : MonoBehaviour
     [SerializeField]
     private string startPassage;
     public string currentPassage;
+
     //[SerializeField]
     public Story story;
-    bool active = false;
+    public bool active = false;
     // Start is called before the first frame update
     void Start()
     {
+        //currentPassage = SaveVar.instance.currentPassage;
         currentPassage = startPassage;
+
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class NPC : MonoBehaviour
         if (active)
         {
             currentPassage = story.CurrentPassage.Name;
+           
         }
     }
     public void GoToPassage()

@@ -127,6 +127,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		passage23_Init();
 		passage24_Init();
 		passage25_Init();
+		passage26_Init();
 	}
 
 	// ---------------
@@ -227,32 +228,6 @@ Vars.canPlay  = false
 	{
 		Vars.playerName  = "Fernandinez";
 		yield return lineBreak();
-		yield return text("Hi ");
-		yield return text(Vars.playerName);
-		yield return text(", it's ");
-		yield return text(Vars.ScouterName);
-		yield return text(" How are you today?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I'm Great! can't wait to start our journey together!");
-		yield return lineBreak();
-		yield return text(Vars.ScouterName);
-		yield return text(": Good, Me Too! So what's the plan what would you like to do first?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I was debating between these options, let me know what you think!");
-		yield return lineBreak();
-		yield return link("Get some rest.. ", "Player Resting", null);
-		yield return lineBreak();
-		yield return link("Go workout.. ", "Player Workout", null);
-		yield return lineBreak();
-		yield return link("Go practice.. ", "Player Practice", null);
-		yield return lineBreak();
-		yield return link("Go eat something.. ", "Player Eating", null);
-		yield return lineBreak();
-		yield return link("Go party!! ", "Player Outing", null);
-		yield return lineBreak();
-		yield return lineBreak();
 		Vars.motivation  = 30;
 		yield return lineBreak();
 		Vars.physicalShape  = 70;
@@ -278,32 +253,6 @@ Vars.canPlay  = false
 	{
 		Vars.playerName  = "Van";
 		yield return lineBreak();
-		yield return text("Hi ");
-		yield return text(Vars.playerName);
-		yield return text(", it's ");
-		yield return text(Vars.ScouterName);
-		yield return text(" How are you today?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I'm Great! can't wait to start our journey together!");
-		yield return lineBreak();
-		yield return text(Vars.ScouterName);
-		yield return text(": Good, Me Too! So what's the plan what would you like to do first?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I was debating between these options, let me know what you think!");
-		yield return lineBreak();
-		yield return link("Get some rest.. ", "Player Resting", null);
-		yield return lineBreak();
-		yield return link("Go workout.. ", "Player Workout", null);
-		yield return lineBreak();
-		yield return link("Go practice.. ", "Player Practice", null);
-		yield return lineBreak();
-		yield return link("Go eat something.. ", "Player Eating", null);
-		yield return lineBreak();
-		yield return link("Go party!! ", "Player Outing", null);
-		yield return lineBreak();
-		yield return lineBreak();
 		Vars.motivation  = 70;
 		yield return lineBreak();
 		Vars.physicalShape  = 30;
@@ -328,32 +277,6 @@ Vars.canPlay  = false
 	IStoryThread passage6_Main()
 	{
 		Vars.playerName  = "Dembalio";
-		yield return lineBreak();
-		yield return text("Hi ");
-		yield return text(Vars.playerName);
-		yield return text(", it's ");
-		yield return text(Vars.ScouterName);
-		yield return text(" How are you today?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I'm Great! can't wait to start our journey together!");
-		yield return lineBreak();
-		yield return text(Vars.ScouterName);
-		yield return text(": Good, Me Too! So what's the plan what would you like to do first?");
-		yield return lineBreak();
-		yield return text(Vars.playerName);
-		yield return text(": I was debating between these options, let me know what you think!");
-		yield return lineBreak();
-		yield return link("Get some rest.. ", "Player Resting", null);
-		yield return lineBreak();
-		yield return link("Go workout.. ", "Player Workout", null);
-		yield return lineBreak();
-		yield return link("Go practice.. ", "Player Practice", null);
-		yield return lineBreak();
-		yield return link("Go eat something.. ", "Player Eating", null);
-		yield return lineBreak();
-		yield return link("Go party!! ", "Player Outing", null);
-		yield return lineBreak();
 		yield return lineBreak();
 		Vars.motivation  = 50;
 		yield return lineBreak();
@@ -1090,6 +1013,45 @@ Vars.canPlay  = false
 	IStoryThread passage25_Main()
 	{
 		yield return text("You just got fired.. Sorry to hear.. Try again next time..");
+		yield break;
+	}
+
+
+	// .............
+	// #26: Hello Player
+
+	void passage26_Init()
+	{
+		this.Passages[@"Hello Player"] = new StoryPassage(@"Hello Player", new string[]{ "meetPlayer", }, passage26_Main);
+	}
+
+	IStoryThread passage26_Main()
+	{
+		yield return text("Hi ");
+		yield return text(Vars.playerName);
+		yield return text(", it's ");
+		yield return text(Vars.ScouterName);
+		yield return text(" How are you today?");
+		yield return lineBreak();
+		yield return text(Vars.playerName);
+		yield return text(": I'm Great! can't wait to start our journey together!");
+		yield return lineBreak();
+		yield return text(Vars.ScouterName);
+		yield return text(": Good, Me Too! So what's the plan what would you like to do first?");
+		yield return lineBreak();
+		yield return text(Vars.playerName);
+		yield return text(": I was debating between these options, let me know what you think!");
+		yield return lineBreak();
+		yield return lineBreak();
+		yield return link("Get some rest.. ", "Player Resting", null);
+		yield return lineBreak();
+		yield return link("Go workout.. ", "Player Workout", null);
+		yield return lineBreak();
+		yield return link("Go practice.. ", "Player Practice", null);
+		yield return lineBreak();
+		yield return link("Go eat something.. ", "Player Eating", null);
+		yield return lineBreak();
+		yield return link("Go party!! ", "Player Outing", null);
 		yield break;
 	}
 

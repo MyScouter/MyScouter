@@ -17,6 +17,8 @@ public class Interaction : MonoBehaviour
     public GameObject background;
     public GameObject TestConverstion;
 
+    public string currentPassage;
+
     private void Awake()
     {
         isClicked = false;
@@ -34,7 +36,6 @@ public class Interaction : MonoBehaviour
                 TestConverstion.SetActive(true);
                 NPC.instance.GoToPassage();
                 NPC.instance.Active();
-                //NPC.instance.story.Output.ForEach(e => Debug.Log(e));
                 isClicked = true;
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
             }
@@ -56,21 +57,7 @@ public class Interaction : MonoBehaviour
 
         }
     }
-    void stroy_OnOutput(StoryOutput output)
-    {
-        /*if (output.Text.Equals(""))
-        {
-
-        }*/
-        Debug.Log(output.Text);
-    }
-
-    private void Update()
-    {
-        
-
-
-    }
+ 
 
 
     #region GUI Config

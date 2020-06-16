@@ -677,225 +677,6 @@
                         "type": "br"
                     },
                     {
-                        "text": "Hi ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ", it's ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": " How are you today?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I'm Great! can't wait to start our journey together!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": Good, Me Too! So what's the plan what would you like to do first?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I was debating between these options, let me know what you think!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Get some rest.. \",\"Player Resting\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Get some rest.. \",\"Player Resting\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Get some rest.. ",
-                                "text": "\"Get some rest.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Resting",
-                                "text": "\"Player Resting\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go workout.. \",\"Player Workout\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go workout.. \",\"Player Workout\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go workout.. ",
-                                "text": "\"Go workout.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Workout",
-                                "text": "\"Player Workout\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go practice.. \",\"Player Practice\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go practice.. \",\"Player Practice\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go practice.. ",
-                                "text": "\"Go practice.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Practice",
-                                "text": "\"Player Practice\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go eat something.. \",\"Player Eating\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go eat something.. \",\"Player Eating\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go eat something.. ",
-                                "text": "\"Go eat something.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Eating",
-                                "text": "\"Player Eating\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go party!! \",\"Player Outing\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go party!! \",\"Player Outing\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go party!! ",
-                                "text": "\"Go party!! \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Outing",
-                                "text": "\"Player Outing\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
                         "innerText": "set: $motivation to 30",
                         "name": "set",
                         "text": "(set: $motivation to 30)",
@@ -1151,225 +932,6 @@
                         "type": "br"
                     },
                     {
-                        "text": "Hi ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ", it's ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": " How are you today?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I'm Great! can't wait to start our journey together!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": Good, Me Too! So what's the plan what would you like to do first?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I was debating between these options, let me know what you think!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Get some rest.. \",\"Player Resting\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Get some rest.. \",\"Player Resting\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Get some rest.. ",
-                                "text": "\"Get some rest.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Resting",
-                                "text": "\"Player Resting\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go workout.. \",\"Player Workout\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go workout.. \",\"Player Workout\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go workout.. ",
-                                "text": "\"Go workout.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Workout",
-                                "text": "\"Player Workout\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go practice.. \",\"Player Practice\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go practice.. \",\"Player Practice\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go practice.. ",
-                                "text": "\"Go practice.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Practice",
-                                "text": "\"Player Practice\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go eat something.. \",\"Player Eating\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go eat something.. \",\"Player Eating\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go eat something.. ",
-                                "text": "\"Go eat something.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Eating",
-                                "text": "\"Player Eating\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go party!! \",\"Player Outing\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go party!! \",\"Player Outing\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go party!! ",
-                                "text": "\"Go party!! \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Outing",
-                                "text": "\"Player Outing\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
                         "innerText": "set: $motivation to 70",
                         "name": "set",
                         "text": "(set: $motivation to 70)",
@@ -1619,225 +1181,6 @@
                             }
                         ],
                         "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "Hi ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ", it's ",
-                        "type": "text"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": " How are you today?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I'm Great! can't wait to start our journey together!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "ScouterName",
-                        "text": "$ScouterName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": Good, Me Too! So what's the plan what would you like to do first?",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "name": "playerName",
-                        "text": "$playerName",
-                        "type": "variable"
-                    },
-                    {
-                        "text": ": I was debating between these options, let me know what you think!",
-                        "type": "text"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Get some rest.. \",\"Player Resting\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Get some rest.. \",\"Player Resting\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Get some rest.. ",
-                                "text": "\"Get some rest.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Resting",
-                                "text": "\"Player Resting\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go workout.. \",\"Player Workout\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go workout.. \",\"Player Workout\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go workout.. ",
-                                "text": "\"Go workout.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Workout",
-                                "text": "\"Player Workout\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go practice.. \",\"Player Practice\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go practice.. \",\"Player Practice\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go practice.. ",
-                                "text": "\"Go practice.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Practice",
-                                "text": "\"Player Practice\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go eat something.. \",\"Player Eating\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go eat something.. \",\"Player Eating\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go eat something.. ",
-                                "text": "\"Go eat something.. \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Eating",
-                                "text": "\"Player Eating\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "link-goto:\"Go party!! \",\"Player Outing\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"Go party!! \",\"Player Outing\")",
-                        "tokens": [
-                            {
-                                "text": "link-goto:",
-                                "type": "macroName"
-                            },
-                            {
-                                "innerText": "Go party!! ",
-                                "text": "\"Go party!! \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
-                            },
-                            {
-                                "innerText": "Player Outing",
-                                "text": "\"Player Outing\"",
-                                "type": "string"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
                     },
                     {
                         "text": "\n",
@@ -11893,6 +11236,228 @@
                     {
                         "text": "You just got fired.. Sorry to hear.. Try again next time..",
                         "type": "text"
+                    }
+                ]
+            },
+            {
+                "Name": "Hello Player",
+                "Pid": "26",
+                "Tags": "meetPlayer",
+                "Tokens": [
+                    {
+                        "text": "Hi ",
+                        "type": "text"
+                    },
+                    {
+                        "name": "playerName",
+                        "text": "$playerName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": ", it's ",
+                        "type": "text"
+                    },
+                    {
+                        "name": "ScouterName",
+                        "text": "$ScouterName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": " How are you today?",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "name": "playerName",
+                        "text": "$playerName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": ": I'm Great! can't wait to start our journey together!",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "name": "ScouterName",
+                        "text": "$ScouterName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": ": Good, Me Too! So what's the plan what would you like to do first?",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "name": "playerName",
+                        "text": "$playerName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": ": I was debating between these options, let me know what you think!",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Get some rest.. \",\"Player Resting\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Get some rest.. \",\"Player Resting\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Get some rest.. ",
+                                "text": "\"Get some rest.. \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Player Resting",
+                                "text": "\"Player Resting\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Go workout.. \",\"Player Workout\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Go workout.. \",\"Player Workout\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Go workout.. ",
+                                "text": "\"Go workout.. \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Player Workout",
+                                "text": "\"Player Workout\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Go practice.. \",\"Player Practice\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Go practice.. \",\"Player Practice\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Go practice.. ",
+                                "text": "\"Go practice.. \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Player Practice",
+                                "text": "\"Player Practice\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Go eat something.. \",\"Player Eating\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Go eat something.. \",\"Player Eating\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Go eat something.. ",
+                                "text": "\"Go eat something.. \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Player Eating",
+                                "text": "\"Player Eating\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Go party!! \",\"Player Outing\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Go party!! \",\"Player Outing\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Go party!! ",
+                                "text": "\"Go party!! \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Player Outing",
+                                "text": "\"Player Outing\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
                     }
                 ]
             }
