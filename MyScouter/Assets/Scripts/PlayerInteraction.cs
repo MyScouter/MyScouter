@@ -6,6 +6,7 @@ public class PlayerInteraction : Interaction
 {
     bool isShow=true;
     bool isFromScene = true;
+    public float restTime=15f;
     private void Awake() {
         //base.FindObject();
         base.isClicked = false;
@@ -42,20 +43,28 @@ public class PlayerInteraction : Interaction
                        }*/
             if(isFromScene)
             {
-                Debug.Log("in tag check");
+                //Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
                 
                 switch (NPC.instance.story.Vars.GetMember("fromScene").ToString())
                 {
                     case "Player Workout":
                         stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                         player.transform.position=SaveVar.instance.goToPositions[1].position;
                         isFromScene = false;
                         break;
                     case "Player Resting":
+                        Debug.Log("Player Resting");
+                        stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                        StartCoroutine(CameraControler.instance.showScene(restTime));
                         isFromScene = false;
                         break;
                     case "Player Practice":
                         isFromScene = false;
+                         stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                        StartCoroutine(StreamVideo.instance.playVideo());
                         break;
                     case "Player Eating":
                         isFromScene = false;
@@ -64,7 +73,7 @@ public class PlayerInteraction : Interaction
                         isFromScene = false;
                         break;
                 }
-
+                TextController.instance.updateScore = true;
             }
         }
     }
