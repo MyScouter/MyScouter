@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -19,12 +18,20 @@ public class StreamVideo : MonoBehaviour
     #endregion
     public RawImage raw;
     public VideoPlayer video;
+    public VideoClip[] videos;
     //public AudioSource source;
   
     
-    public IEnumerator playVideo()
+    public IEnumerator playVideo(int num)
     {
+        int number = num;
+        if (num == -1)
+        {
+            System.Random random = new System.Random();
+             number = random.Next(0, 3);
+        }
 
+        video.clip = videos[number];
         raw.enabled = true;
         video.Prepare();
         while (!video.isPrepared)

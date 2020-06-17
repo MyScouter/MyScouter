@@ -97,7 +97,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 
 	@Scouter_Career()
 	{
-		this.StartPassage = "First Call";
+		this.StartPassage = "Introduction";
 
 		base.Vars = new VarDefs() { Story = this, StrictMode = true };
 
@@ -130,6 +130,8 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		passage24_Init();
 		passage25_Init();
 		passage26_Init();
+		passage27_Init();
+		passage28_Init();
 	}
 
 	// ---------------
@@ -488,7 +490,7 @@ Vars.fromScene  = ""
 		}
 		yield return lineBreak();
 		yield return lineBreak();
-		Vars.flagNum  = 2;
+		Vars.flagNum  = 3;
 		yield return lineBreak();
 		Vars.fromScene  = "Player Practice";
 		yield return lineBreak();
@@ -1076,6 +1078,65 @@ Vars.fromScene  = ""
 		yield return link("Go eat something.. ", "Player Eating", null);
 		yield return lineBreak();
 		yield return link("Go party!! ", "Player Outing", null);
+		yield break;
+	}
+
+
+	// .............
+	// #27: Introduction
+
+	void passage27_Init()
+	{
+		this.Passages[@"Introduction"] = new StoryPassage(@"Introduction", new string[]{  }, passage27_Main);
+	}
+
+	IStoryThread passage27_Main()
+	{
+		Vars.ScouterName  = "John";
+		yield return lineBreak();
+		Vars.Helper  = "Secretary:";
+		yield return lineBreak();
+		yield return lineBreak();
+		yield return text(Vars.Helper);
+		yield return text(" Hi ");
+		yield return text(Vars.ScouterName);
+		yield return text("! I wanted to wish you good luck on your first day as an official scouter! Lets have a quick reminder on what's your mission as a scouter. First of all you'll have to recruit a new player, after you recruit the player you'll be able to guide your client through different activities. make sure you satisfy your client's needs.. if you're good enough you'll be able to achieve the goal and finish a successfull career with your client, be sloppy and you might find yourself getting fired..");
+		yield return lineBreak();
+		yield return text("Don't forget to let your client play matches once in a while so you can gain money - if he wins..");
+		yield return lineBreak();
+		yield return text("Do you understand your goal?");
+		yield return lineBreak();
+		yield return link("yes, let's do this! ", "First Call", null);
+		yield return lineBreak();
+		yield return link("no, please explain to me a little more..", "Further Explanation", null);
+		yield break;
+	}
+
+
+	// .............
+	// #28: Further Explanation
+
+	void passage28_Init()
+	{
+		this.Passages[@"Further Explanation"] = new StoryPassage(@"Further Explanation", new string[]{  }, passage28_Main);
+	}
+
+	IStoryThread passage28_Main()
+	{
+		yield return text(Vars.Helper);
+		yield return text(" Let's go into a little more details..");
+		yield return lineBreak();
+		yield return text("First - you have to recruit a player.");
+		yield return lineBreak();
+		yield return text("Second - After you recruit a player you'll see the player has 5 different needs that you'll want to satisfy.. while positive needs you'll want to increase and negative needs you'll want to decrease..");
+		yield return lineBreak();
+		yield return text("Third - You can see at any given point what the goal score is, the player needs have an immediate effect on the goal score. get a high enough score and you finish your career successfully, reach a very low goal score and you'll get fired.");
+		yield return lineBreak();
+		yield return text("Fourth - You can send your player on different activities which by turn will satisfy different needs depeneding on the activity chosen.");
+		yield return lineBreak();
+		yield return text("Additionaly - every once in a while you'll be able to send your player on a match - win the match and you gain money, lose the match and you lose money.");
+		yield return lineBreak();
+		yield return link("Ok, I get it now.. ", "First Call", null);
 		yield break;
 	}
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : Interaction
 {
-    bool isShow=true;
+   // bool isShow=true;
     bool isFromScene = true;
     public float restTime=15f;
     public float workoutTime = 10f;
@@ -35,9 +35,9 @@ public class PlayerInteraction : Interaction
             }
             if(isFromScene)
             {
-                Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
+                //Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
 
-                Debug.Log(NPC.instance.currentPassage);
+                //Debug.Log(NPC.instance.currentPassage);
                 switch (NPC.instance.story.Vars.GetMember("fromScene").ToString())
                 {
                     case "Player Workout":
@@ -48,7 +48,6 @@ public class PlayerInteraction : Interaction
                         resetVar();
                         break;
                     case "Player Resting":
-                        Debug.Log("Player Resting");
                         stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                         StartCoroutine(CameraControler.instance.showScene(restTime,0));
@@ -59,11 +58,14 @@ public class PlayerInteraction : Interaction
                         isFromScene = false;
                          stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                        StartCoroutine(StreamVideo.instance.playVideo());
+                        StartCoroutine(StreamVideo.instance.playVideo(-1));
                         resetVar();
                         break;
                     case "Player Eating":
                         isFromScene = false;
+                        stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                        StartCoroutine(StreamVideo.instance.playVideo(4));
                         resetVar();
                         break;
                     case "Player Outing":

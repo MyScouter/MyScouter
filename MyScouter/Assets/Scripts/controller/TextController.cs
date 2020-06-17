@@ -47,6 +47,7 @@ public class TextController : MonoBehaviour
                 updateScore = false;
             }
             money.text = "Money: " + NPC.instance.story.Vars.GetMember("moneyAmount").ToString();
+            //TODO: CHECK IF THE GOAL CHANGE
             goal.text = "Goal: " + NPC.instance.story.Vars.GetMember("goal").ToString();
         }
     }

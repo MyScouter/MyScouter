@@ -11,11 +11,11 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Scouter Career" startnode="1" creator="Twine" creator-version="2.3.8" ifid="1F47A5EC-50AA-4259-90A4-1B94C905DF50" zoom="0.6" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="First Call" tags="" position="596,99" size="100,100">(set: $ScouterName to &quot;John&quot;)
+<tw-storydata name="Scouter Career" startnode="27" creator="Twine" creator-version="2.3.8" ifid="1F47A5EC-50AA-4259-90A4-1B94C905DF50" zoom="0.6" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="First Call" tags="" position="602,54" size="100,100">(set: $ScouterName to &quot;John&quot;)
 (set: $Helper to &quot;Secretary:&quot;)
 $Helper Hi $ScouterName, How are you Today? do you want to recruit a new player?
 [[I&#39;m good! Not yet, I want to look around my new house a bit.. -&gt;Other Calls]]
-[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="798.3333333333334,294.3333333333333" size="100,100">Who would you like to recruit Ms. John?
+[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="798,294" size="100,100">Who would you like to recruit Ms. John?
 [[Fernandinez Horasio, In great shape but not so motivated.. -&gt;Hello Fernandinez]]
 [[Van Bluchten, Very motivated but not in the best shape.. -&gt;Hello Van]]
 [[Dembalio Grizman, Pretty average in both motivation and shape -&gt;Hello Dembalio]]
@@ -37,28 +37,28 @@ $isLoan to false,
 $fromScene to &quot;&quot;
 )</tw-passagedata><tw-passagedata pid="3" name="Other Calls" tags="" position="301,302" size="100,100">$Helper Hi Again! Did you look around enough? Would you want to call now?
 [[No, not yet.. -&gt;Other Calls]] 
-[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="272.66666666666663,526.3333333333333" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
+[[Yes, I would love to recruit a new client now -&gt;Choose Player]] </tw-passagedata><tw-passagedata pid="4" name="Hello Fernandinez" tags="" position="272,526" size="100,100">(set: $playerName to &quot;Fernandinez&quot;)
 (set: $motivation to 30)
 (set: $physicalShape to 70)
 (set: $happiness to 50)
 (set: $hunger to 40)
 (set: $tiredness to 40)
 
-(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="576.3333333333333,506.6666666666667" size="100,100">(set: $playerName to &quot;Van&quot;)
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="5" name="Hello Van" tags="" position="576,506" size="100,100">(set: $playerName to &quot;Van&quot;)
 (set: $motivation to 70)
 (set: $physicalShape to 30)
 (set: $happiness to 50)
 (set: $hunger to 40)
 (set: $tiredness to 40)
 
-(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="843,504.00000000000006" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="6" name="Hello Dembalio" tags="" position="843,504" size="100,100">(set: $playerName to &quot;Dembalio&quot;)
 (set: $motivation to 50)
 (set: $physicalShape to 50)
 (set: $happiness to 50)
 (set: $hunger to 40)
 (set: $tiredness to 40)
 
-(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="activity" position="200.33333333333334,996.6666666666666" size="100,100">&lt;!--Player sleeping..--&gt; 
+(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)</tw-passagedata><tw-passagedata pid="7" name="Player Resting" tags="activity" position="200,996" size="100,100">&lt;!--Player sleeping..--&gt; 
 
 (if: $tiredness &gt;= 20)[(set: $tiredness to $tiredness - 20)]
 (else:)[(set: $tiredness to 0)]
@@ -68,7 +68,7 @@ $fromScene to &quot;&quot;
 (else:)[(set: $hunger to 100)]
 (set: $flagNum to 1)
 (set: $fromScene to &quot;Player Resting&quot;)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="activity" position="597,997" size="100,100">&lt;!--Player workingout..--&gt;
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="activity" position="600.3333333333334,997" size="100,100">&lt;!--Player workingout..--&gt;
 (if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
 (else:)[(set: $tiredness to 100)]
 
@@ -107,7 +107,7 @@ $fromScene to &quot;&quot;
 (if: $happiness &gt;= 5)[(set: $happiness to $happiness - 5)]
 (else:)[(set: $happiness to 0)]]
 
-(set: $flagNum to 2)
+(set: $flagNum to 3)
 (set: $fromScene to &quot;Player Practice&quot;)
 (goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="10" name="Player Eating" tags="activity" position="1401,1002" size="100,100">&lt;!--Player eating..--&gt;
 (if: $physicalShape &gt;= 5)[(set: $physicalShape to $physicalShape - 5)]
@@ -142,14 +142,14 @@ $fromScene to &quot;&quot;
 
 (set: $flagNum to 5)
 (set: $fromScene to &quot;Player Outing&quot;)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="12" name="Calculate Goal" tags="goalCalculation" position="1890.3333333333333,103" size="100,100">(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="12" name="Calculate Goal" tags="goalCalculation" position="1890,103" size="100,100">(set: $goal to ($motivation + $physicalShape + $happiness + (100 - $hunger) + (100 - $tiredness))/5)
 
 (set: $waitTime to $waitTime + 1)
 (if:$isLoan is true)[(set: $loanRound to $loanRound + 1)]
 (if: $goal &gt; 95)[(goto: &quot;End Game&quot;)]
 (else-if: $goal &lt; 10)[(goto: &quot;Fired&quot;)]
 (else-if: $loanRound &gt; $daysToReturn)[(goto: &quot;Fired&quot;)]
-(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2200.6666666666665,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
+(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2200,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
 (set: $fromScene to &quot;&quot;)
 (if: $isTired is false)[[[Get some rest..-&gt;Player Resting]]]
 (if: $isWorkout is false)[[[Go workout..-&gt;Player Workout]]]
@@ -158,7 +158,7 @@ $fromScene to &quot;&quot;
 (if: $isOut is false)[[[Go party!!-&gt;Player Outing]]]
 (if: $canPlay is true)[[[Game Time!-&gt;Player Game]]]
 (if: $moneyAmount &lt;= 0)[[[I need a loan..-&gt;Loan Money]]]
-(if: $isLoan is true)[[[I need to see if I can pay back..-&gt;Return Loan]]]</tw-passagedata><tw-passagedata pid="14" name="Reset flags" tags="" position="1996,104.66666666666666" size="100,100">(set: $isTired to false, $isWorkout to false, $isPractice to false, $isEating to false, $isOut to false)
+(if: $isLoan is true)[[[I need to see if I can pay back..-&gt;Return Loan]]]</tw-passagedata><tw-passagedata pid="14" name="Reset flags" tags="" position="1996,104" size="100,100">(set: $isTired to false, $isWorkout to false, $isPractice to false, $isEating to false, $isOut to false)
 
 (if: $flagNum is 1)[(set: $isTired to true)]
 (else-if: $flagNum is 2)[(set: $isWorkout to true)]
@@ -166,7 +166,7 @@ $fromScene to &quot;&quot;
 (else-if: $flagNum is 4)[(set: $isEating to true)]
 (else-if: $flagNum is 5)[(set: $isOut to true)]
 
-(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2200,1197.3333333333333" size="100,100">(set: $waitTime to 0)
+(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2200,1197" size="100,100">(set: $waitTime to 0)
 (set: $moneyAmount to $moneyAmount - 100)
 
 (set: $rcOne to (random: 1, 100))
@@ -175,7 +175,7 @@ $fromScene to &quot;&quot;
 (set: $avrChance to ( $rcOne + $rcTwo + $rcThree)/3)
 
 (if: $goal &gt; $avrChance)[(goto: &quot;Game Won&quot;)]
-(else:)[(goto: &quot;Game Lost&quot;)]</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2099.3333333333335,101.66666666666666" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
+(else:)[(goto: &quot;Game Lost&quot;)]</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2099,101" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
 (else:)[(set: $canPlay to false)]</tw-passagedata><tw-passagedata pid="17" name="Game Won" tags="game" position="2100,1300" size="100,100">Congrutalions!! you&#39;ve won the match!!
 
 (set: $moneyAmount to $moneyAmount + 400)
@@ -230,7 +230,7 @@ Banker: The amount you need to pay is $amountToReturn..
 (if: $amountToReturn &lt;= $moneyAmount)[Loan has been Payed.. (set: $moneyAmount to $moneyAmount - $amountToReturn, $isLoan to false)]
 (else:)[You don&#39;t have enough money..]
 
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata><tw-passagedata pid="26" name="Hello Player" tags="meetPlayer" position="991,1470.6666666666665" size="100,100">Hi $playerName, it&#39;s $ScouterName How are you today?
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="24" name="End Game" tags="endGame" position="1600,1" size="100,100">You&#39;ve finished the game successfully! well done!</tw-passagedata><tw-passagedata pid="25" name="Fired" tags="endGame" position="1601,200" size="100,100">You just got fired.. Sorry to hear.. Try again next time..</tw-passagedata><tw-passagedata pid="26" name="Hello Player" tags="meetPlayer" position="991,1470" size="100,100">Hi $playerName, it&#39;s $ScouterName How are you today?
 $playerName: I&#39;m Great! can&#39;t wait to start our journey together!
 $ScouterName: Good, Me Too! So what&#39;s the plan what would you like to do first?
 $playerName: I was debating between these options, let me know what you think!
@@ -239,7 +239,20 @@ $playerName: I was debating between these options, let me know what you think!
 [[Go workout.. -&gt;Player Workout]]
 [[Go practice.. -&gt;Player Practice]]
 [[Go eat something.. -&gt;Player Eating]]
-[[Go party!! -&gt;Player Outing]]</tw-passagedata></tw-storydata>
+[[Go party!! -&gt;Player Outing]]</tw-passagedata><tw-passagedata pid="27" name="Introduction" tags="" position="1010,119" size="100,100">(set: $ScouterName to &quot;John&quot;)
+(set: $Helper to &quot;Secretary:&quot;)
+
+$Helper Hi $ScouterName! I wanted to wish you good luck on your first day as an official scouter! Lets have a quick reminder on what&#39;s your mission as a scouter. First of all you&#39;ll have to recruit a new player, after you recruit the player you&#39;ll be able to guide your client through different activities. make sure you satisfy your client&#39;s needs.. if you&#39;re good enough you&#39;ll be able to achieve the goal and finish a successfull career with your client, be sloppy and you might find yourself getting fired..
+Don&#39;t forget to let your client play matches once in a while so you can gain money - if he wins..
+Do you understand your goal?
+[[yes, let&#39;s do this! -&gt;First Call]]
+[[no, please explain to me a little more..-&gt;Further Explanation]]</tw-passagedata><tw-passagedata pid="28" name="Further Explanation" tags="" position="1006,267" size="100,100">$Helper Let&#39;s go into a little more details..
+First - you have to recruit a player.
+Second - After you recruit a player you&#39;ll see the player has 5 different needs that you&#39;ll want to satisfy.. while positive needs you&#39;ll want to increase and negative needs you&#39;ll want to decrease..
+Third - You can see at any given point what the goal score is, the player needs have an immediate effect on the goal score. get a high enough score and you finish your career successfully, reach a very low goal score and you&#39;ll get fired.
+Fourth - You can send your player on different activities which by turn will satisfy different needs depeneding on the activity chosen.
+Additionaly - every once in a while you&#39;ll be able to send your player on a match - win the match and you gain money, lose the match and you lose money.
+[[Ok, I get it now.. -&gt;First Call]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

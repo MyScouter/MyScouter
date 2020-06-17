@@ -18,7 +18,7 @@ public class ShowMassage : MonoBehaviour
     private string msg;
     public string changingMsg;
 
-    public bool showMassage=true;
+    public bool showMassage=false;
 
 
     #region GUI Config

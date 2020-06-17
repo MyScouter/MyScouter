@@ -5028,9 +5028,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "set: $flagNum to 2",
+                        "innerText": "set: $flagNum to 3",
                         "name": "set",
-                        "text": "(set: $flagNum to 2)",
+                        "text": "(set: $flagNum to 3)",
                         "tokens": [
                             {
                                 "text": "set:",
@@ -5058,9 +5058,9 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "2",
+                                "text": "3",
                                 "type": "number",
-                                "value": 2
+                                "value": 3
                             }
                         ],
                         "type": "macro"
@@ -12362,8 +12362,283 @@
                         "type": "macro"
                     }
                 ]
+            },
+            {
+                "Name": "Introduction",
+                "Pid": "27",
+                "Tags": "",
+                "Tokens": [
+                    {
+                        "innerText": "set: $ScouterName to \"John\"",
+                        "name": "set",
+                        "text": "(set: $ScouterName to \"John\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "ScouterName",
+                                "text": "$ScouterName",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "John",
+                                "text": "\"John\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $Helper to \"Secretary:\"",
+                        "name": "set",
+                        "text": "(set: $Helper to \"Secretary:\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "Helper",
+                                "text": "$Helper",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Secretary:",
+                                "text": "\"Secretary:\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "name": "Helper",
+                        "text": "$Helper",
+                        "type": "variable"
+                    },
+                    {
+                        "text": " Hi ",
+                        "type": "text"
+                    },
+                    {
+                        "name": "ScouterName",
+                        "text": "$ScouterName",
+                        "type": "variable"
+                    },
+                    {
+                        "text": "! I wanted to wish you good luck on your first day as an official scouter! Lets have a quick reminder on what's your mission as a scouter. First of all you'll have to recruit a new player, after you recruit the player you'll be able to guide your client through different activities. make sure you satisfy your client's needs.. if you're good enough you'll be able to achieve the goal and finish a successfull career with your client, be sloppy and you might find yourself getting fired..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Don't forget to let your client play matches once in a while so you can gain money - if he wins..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Do you understand your goal?",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"yes, let's do this! \",\"First Call\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"yes, let's do this! \",\"First Call\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "yes, let's do this! ",
+                                "text": "\"yes, let's do this! \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "First Call",
+                                "text": "\"First Call\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"no, please explain to me a little more..\",\"Further Explanation\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"no, please explain to me a little more..\",\"Further Explanation\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "no, please explain to me a little more..",
+                                "text": "\"no, please explain to me a little more..\"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "Further Explanation",
+                                "text": "\"Further Explanation\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    }
+                ]
+            },
+            {
+                "Name": "Further Explanation",
+                "Pid": "28",
+                "Tags": "",
+                "Tokens": [
+                    {
+                        "name": "Helper",
+                        "text": "$Helper",
+                        "type": "variable"
+                    },
+                    {
+                        "text": " Let's go into a little more details..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "First - you have to recruit a player.",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Second - After you recruit a player you'll see the player has 5 different needs that you'll want to satisfy.. while positive needs you'll want to increase and negative needs you'll want to decrease..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Third - You can see at any given point what the goal score is, the player needs have an immediate effect on the goal score. get a high enough score and you finish your career successfully, reach a very low goal score and you'll get fired.",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Fourth - You can send your player on different activities which by turn will satisfy different needs depeneding on the activity chosen.",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Additionaly - every once in a while you'll be able to send your player on a match - win the match and you gain money, lose the match and you lose money.",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "link-goto:\"Ok, I get it now.. \",\"First Call\"",
+                        "name": "linkgoto",
+                        "text": "(link-goto:\"Ok, I get it now.. \",\"First Call\")",
+                        "tokens": [
+                            {
+                                "text": "link-goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "innerText": "Ok, I get it now.. ",
+                                "text": "\"Ok, I get it now.. \"",
+                                "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "innerText": "First Call",
+                                "text": "\"First Call\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    }
+                ]
             }
         ],
-        "startPid": "1"
+        "startPid": "27"
     }
 }
