@@ -660,6 +660,8 @@ Vars.fromScene  = ""
 		yield return text(Vars.ScouterName);
 		yield return text(" what would you like me to do now?");
 		yield return lineBreak();
+		Vars.fromScene  = "";
+		yield return lineBreak();
 		if(Vars.isTired == false) {
 			yield return link("Get some rest..", "Player Resting", null);
 		}

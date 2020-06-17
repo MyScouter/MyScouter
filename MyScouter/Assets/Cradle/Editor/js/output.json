@@ -7531,6 +7531,47 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "set: $fromScene to \"\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "\"\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "if: $isTired is false",
                         "name": "if",
                         "text": "(if: $isTired is false)",

@@ -15,7 +15,7 @@
 (set: $Helper to &quot;Secretary:&quot;)
 $Helper Hi $ScouterName, How are you Today? do you want to recruit a new player?
 [[I&#39;m good! Not yet, I want to look around my new house a bit.. -&gt;Other Calls]]
-[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="800,294.3333333333333" size="100,100">Who would you like to recruit Ms. John?
+[[I&#39;m good! Yes, I can&#39;t wait to recruit my first client!! -&gt;Choose Player]]</tw-passagedata><tw-passagedata pid="2" name="Choose Player" tags="" position="798.3333333333334,294.3333333333333" size="100,100">Who would you like to recruit Ms. John?
 [[Fernandinez Horasio, In great shape but not so motivated.. -&gt;Hello Fernandinez]]
 [[Van Bluchten, Very motivated but not in the best shape.. -&gt;Hello Van]]
 [[Dembalio Grizman, Pretty average in both motivation and shape -&gt;Hello Dembalio]]
@@ -149,7 +149,8 @@ $fromScene to &quot;&quot;
 (if: $goal &gt; 95)[(goto: &quot;End Game&quot;)]
 (else-if: $goal &lt; 10)[(goto: &quot;Fired&quot;)]
 (else-if: $loanRound &gt; $daysToReturn)[(goto: &quot;Fired&quot;)]
-(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2199,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
+(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2200.6666666666665,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
+(set: $fromScene to &quot;&quot;)
 (if: $isTired is false)[[[Get some rest..-&gt;Player Resting]]]
 (if: $isWorkout is false)[[[Go workout..-&gt;Player Workout]]]
 (if: $isPractice is false)[[[Go practice..-&gt;Player Practice]]]
@@ -165,7 +166,7 @@ $fromScene to &quot;&quot;
 (else-if: $flagNum is 4)[(set: $isEating to true)]
 (else-if: $flagNum is 5)[(set: $isOut to true)]
 
-(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2200,1199" size="100,100">(set: $waitTime to 0)
+(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2200,1197.3333333333333" size="100,100">(set: $waitTime to 0)
 (set: $moneyAmount to $moneyAmount - 100)
 
 (set: $rcOne to (random: 1, 100))

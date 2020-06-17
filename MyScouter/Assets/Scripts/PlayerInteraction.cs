@@ -7,6 +7,9 @@ public class PlayerInteraction : Interaction
     bool isShow=true;
     bool isFromScene = true;
     public float restTime=15f;
+    public float workoutTime = 10f;
+    public float dancingTime = 10f;
+
     private void Awake() {
         //base.FindObject();
         base.isClicked = false;
@@ -30,50 +33,48 @@ public class PlayerInteraction : Interaction
                 NPC.instance.GoToPassage();
                 isClicked = true;
             }
-            /*            if (isShow)
-                        {
-                            Debug.Log(NPC.instance.story.Vars.GetMember("motivation"));
-                            Debug.Log(NPC.instance.story.Vars.GetMember("physicalShape"));
-                            Debug.Log(NPC.instance.story.Vars.GetMember("happiness"));
-                            Debug.Log(NPC.instance.story.Vars.GetMember("hunger"));
-                            Debug.Log(NPC.instance.story.Vars.GetMember("tiredness"));
-                            Debug.Log(NPC.instance.story.Vars.GetMember("goal"));
-                            isShow = false;
-
-                       }*/
             if(isFromScene)
             {
-                //Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
-                
+                Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
+
+                Debug.Log(NPC.instance.currentPassage);
                 switch (NPC.instance.story.Vars.GetMember("fromScene").ToString())
                 {
                     case "Player Workout":
                         stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                        player.transform.position=SaveVar.instance.goToPositions[1].position;
+                        StartCoroutine(CameraControler.instance.showScene(workoutTime, 2));
                         isFromScene = false;
+                        resetVar();
                         break;
                     case "Player Resting":
                         Debug.Log("Player Resting");
                         stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                        StartCoroutine(CameraControler.instance.showScene(restTime));
+                        StartCoroutine(CameraControler.instance.showScene(restTime,0));
                         isFromScene = false;
+                        resetVar();
                         break;
                     case "Player Practice":
                         isFromScene = false;
                          stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                         StartCoroutine(StreamVideo.instance.playVideo());
+                        resetVar();
                         break;
                     case "Player Eating":
                         isFromScene = false;
+                        resetVar();
                         break;
                     case "Player Outing":
+                        stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                        StartCoroutine(CameraControler.instance.showScene(dancingTime, 1));
                         isFromScene = false;
+                        resetVar();
                         break;
                 }
-                TextController.instance.updateScore = true;
+
             }
         }
     }
@@ -94,5 +95,13 @@ public class PlayerInteraction : Interaction
         background.SetActive(false);
         TestConverstion.SetActive(false);
         NPC.instance.ShotDown();
+    }
+    void resetVar()
+    {
+        TextController.instance.updateScore = true;
+        NPC.instance.currentPassage = "After Activity";
+        NPC.instance.story.Vars.SetMember("fromScene", "");
+        isClicked = false;
+        isFromScene = true;
     }
 }

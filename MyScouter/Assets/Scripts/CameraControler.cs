@@ -15,30 +15,30 @@ public class CameraControler : MonoBehaviour
 
     #endregion
     public GameObject firstPersonCamera;
-    public GameObject overheadCamera;
+    public GameObject [] overheadCamera;
 
 
     // Call this function to disable FPS camera,
     // and enable overhead camera.
-    public void ShowSecondScene()
+    public void ShowSecondScene(int num)
     {
         firstPersonCamera.SetActive(false);
-        overheadCamera.SetActive(true);
+        overheadCamera[num].SetActive(true);
     }
 
     // Call this function to enable FPS camera,
     // and disable overhead camera.
-    public void ShowFirstPersonView()
+    public void ShowFirstPersonView(int num)
     {
         firstPersonCamera.SetActive(true);
-        overheadCamera.SetActive(false);
+        overheadCamera[num].SetActive(false);
     }
 
-     public IEnumerator showScene(float waitTime)
+     public IEnumerator showScene(float waitTime,int num)
     {
-        ShowSecondScene();
+        ShowSecondScene(num);
         yield return new WaitForSeconds(waitTime);
-        ShowFirstPersonView();
+        ShowFirstPersonView(num);
 
     }
 }
