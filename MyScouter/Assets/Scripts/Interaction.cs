@@ -20,6 +20,7 @@ public class Interaction : MonoBehaviour
 
     public string currentPassage;
 
+    public MouseLook MouseLook;
     private void Awake()
     {
         isClicked = false;

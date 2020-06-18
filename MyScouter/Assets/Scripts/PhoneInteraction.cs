@@ -8,6 +8,7 @@ public class PhoneInteraction : Interaction
 {
     public GameObject player1;
     public Transform moveTo;
+    
 
     private void Awake() {
         base.isClicked = false;
@@ -22,6 +23,7 @@ public class PhoneInteraction : Interaction
             if (Input.GetKey(KeyCode.F) && !isClicked)
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
+                MouseLook.enabled = false;
                 background.SetActive(true);
                 TestConverstion.SetActive(true);
                 NPC.instance.Active();
@@ -34,6 +36,8 @@ public class PhoneInteraction : Interaction
     public override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
+        MouseLook.enabled = true;
+
     }
     private void Update()
     {
@@ -42,6 +46,8 @@ public class PhoneInteraction : Interaction
            
             if (NPC.instance.currentPassage.Contains("Hello") && !NPC.instance.currentPassage.Equals("Hello Player"))
             {
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                MouseLook.enabled = true;
                 ShowMassage.instanse.changingMsg = "Please go talk to player";
                 ShowMassage.instanse.showMassage = true;
                 TextController.instance.isInstantiated = true;
@@ -49,7 +55,11 @@ public class PhoneInteraction : Interaction
                 showInteractMsg = false;
                 background.SetActive(false);
                 TestConverstion.SetActive(false);
+                //Debug.Log("Before " + player1.transform.position);
+                player1.SetActive(false);
                 player1.transform.position = moveTo.position;
+                player1.SetActive(true);
+                //Debug.Log("After " + player1.transform.position);
                 NPC.instance.ShotDown();
                 NPC.instance.currentPassage = "Hello Player";
             }

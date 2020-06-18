@@ -18,20 +18,22 @@ public class StreamVideo : MonoBehaviour
     #endregion
     public RawImage raw;
     public VideoPlayer video;
-    public VideoClip[] videos;
+    public string[] videoName;
     //public AudioSource source;
-  
-    
+    private void Start()
+    {
+        videoName= new string[]{"FIFA practice1.mp4", "FIFA practice2.mp4" , "FIFA practice3.mp4" , "FIFA practice4.mp4" , "Eating.mp4" , "gameWin.mp4" , "Game lost.mp4" };
+    }
+
     public IEnumerator playVideo(int num)
     {
         int number = num;
         if (num == -1)
         {
             System.Random random = new System.Random();
-             number = random.Next(0, 3);
+            number = random.Next(0, 3);
         }
-
-        video.clip = videos[number];
+        video.url = System.IO.Path.Combine(Application.streamingAssetsPath, videoName[number]);
         video.Prepare();
         while (!video.isPrepared)
         {

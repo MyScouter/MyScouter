@@ -27,6 +27,7 @@ public class PlayerInteraction : Interaction
             if (Input.GetKey(KeyCode.F) && !isClicked)
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
+                MouseLook.enabled = false;
                 background.SetActive(true);
                 TestConverstion.SetActive(true);
                 NPC.instance.Active();
@@ -111,6 +112,7 @@ public class PlayerInteraction : Interaction
         {
             //hide interact message as player may not have been looking at object when they left
             stopTwin();
+            MouseLook.enabled = true;
             ShowMassage.instanse.showMassage = true;
             isClicked = false;
         }
@@ -128,6 +130,7 @@ public class PlayerInteraction : Interaction
         TextController.instance.updateScore = true;
         NPC.instance.currentPassage = "After Activity";
         NPC.instance.story.Vars.SetMember("fromScene", "");
+        MouseLook.enabled = true;
         isClicked = false;
         isFromScene = true;
     }
