@@ -16,8 +16,9 @@ public class ShowMassage : MonoBehaviour
     private GUIStyle guiStyle;
 
     private string msg;
+    public string changingMsg;
 
-    public bool showMassage=true;
+    public bool showMassage=false;
 
 
     #region GUI Config
@@ -29,7 +30,7 @@ public class ShowMassage : MonoBehaviour
         guiStyle.fontSize = 50;
         guiStyle.fontStyle = FontStyle.Bold;
         guiStyle.normal.textColor = Color.white;
-        msg = "Please go talk to the Player";
+        msg = changingMsg;
     }
 
 
