@@ -50,6 +50,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 			VarDef("rcTwo", () => this.@rcTwo, val => this.@rcTwo = val);
 			VarDef("rcThree", () => this.@rcThree, val => this.@rcThree = val);
 			VarDef("avrChance", () => this.@avrChance, val => this.@avrChance = val);
+			VarDef("isWin", () => this.@isWin, val => this.@isWin = val);
 			VarDef("amountToReturn", () => this.@amountToReturn, val => this.@amountToReturn = val);
 		}
 
@@ -79,6 +80,7 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		public StoryVar @rcTwo;
 		public StoryVar @rcThree;
 		public StoryVar @avrChance;
+		public StoryVar @isWin;
 		public StoryVar @amountToReturn;
 	}
 
@@ -436,32 +438,15 @@ Vars.fromScene  = ""
 	IStoryThread passage9_Main()
 	{
 		yield return lineBreak();
-		if(Vars.tiredness <= 90) {
-			Vars.tiredness  = Vars.tiredness + 10;
-		}
-		else {
-			Vars.tiredness  = 100;
-		}
-		yield return lineBreak();
-		yield return lineBreak();
-		if(Vars.physicalShape <= 80) {
-			Vars.physicalShape  = Vars.physicalShape + 20;
+		if(Vars.physicalShape <= 90) {
+			Vars.physicalShape  = Vars.physicalShape + 10;
 		}
 		else {
 			Vars.physicalShape  = 100;
 		}
 		yield return lineBreak();
-		yield return lineBreak();
-		if(Vars.hunger <= 90) {
-			Vars.hunger  = Vars.hunger + 10;
-		}
-		else {
-			Vars.hunger  = 100;
-		}
-		yield return lineBreak();
-		yield return lineBreak();
-		if(Vars.motivation <= 95) {
-			Vars.motivation  = Vars.motivation + 5;
+		if(Vars.motivation <= 90) {
+			Vars.motivation  = Vars.motivation + 10;
 		}
 		else {
 			Vars.motivation  = 100;
@@ -469,23 +454,38 @@ Vars.fromScene  = ""
 		yield return lineBreak();
 		yield return text("	");
 		yield return lineBreak();
-		if(Vars.motivation > 70) {
-			yield return text("I love working it out, I feel like I'm becoming a much better player!! ");
-			if(Vars.happiness <= 95) {
-				Vars.happiness  = Vars.happiness + 5;
+		if(Vars.physicalShape > 70) {
+			yield return text("I could practice for days.. ");
+			yield return lineBreak();
+			if(Vars.tiredness <= 95) {
+				Vars.tiredness  = Vars.tiredness + 5;
 			}
 			else {
-				Vars.happiness  = 100;
+				Vars.tiredness  = 100;
+			}
+			yield return lineBreak();
+			if(Vars.hunger <= 95) {
+				Vars.hunger  = Vars.hunger + 5;
+			}
+			else {
+				Vars.hunger  = 100;
 			}
 		}
 		else {
-			yield return text("I wish I could go out right now..");
+			yield return text("This practice is really hard..");
 			yield return lineBreak();
-			if(Vars.happiness >= 5) {
-				Vars.happiness  = Vars.happiness - 5;
+			if(Vars.tiredness <= 90) {
+				Vars.tiredness  = Vars.tiredness + 10;
 			}
 			else {
-				Vars.happiness  = 0;
+				Vars.tiredness  = 100;
+			}
+			yield return lineBreak();
+			if(Vars.hunger <= 90) {
+				Vars.hunger  = Vars.hunger + 10;
+			}
+			else {
+				Vars.hunger  = 100;
 			}
 		}
 		yield return lineBreak();
@@ -759,11 +759,14 @@ Vars.fromScene  = ""
 		yield return lineBreak();
 		yield return lineBreak();
 		if(Vars.goal > Vars.avrChance) {
-			yield return abort(goToPassage: "Game Won");
+			Vars.isWin  = true;
 		}
 		else {
-			yield return abort(goToPassage: "Game Lost");
+			Vars.isWin  = false;
 		}
+		yield return lineBreak();
+		yield return lineBreak();
+		Vars.fromScene  = "Player Game";
 		yield break;
 	}
 
@@ -828,8 +831,7 @@ Vars.fromScene  = ""
 		}
 		yield return lineBreak();
 		yield return lineBreak();
-		yield return link("return from the match ", "Calculate Goal", null);
-		yield return text(" ");
+		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
 	}
 
@@ -881,7 +883,7 @@ Vars.fromScene  = ""
 		Vars.moneyAmount  = Vars.moneyAmount - 200;
 		yield return lineBreak();
 		yield return lineBreak();
-		if(Vars.motivation <= 10) {
+		if(Vars.motivation >= 10) {
 			Vars.motivation  = Vars.motivation - 10;
 		}
 		else {
@@ -889,7 +891,7 @@ Vars.fromScene  = ""
 		}
 		yield return lineBreak();
 		yield return lineBreak();
-		if(Vars.happiness <= 15) {
+		if(Vars.happiness >= 15) {
 			Vars.happiness  = Vars.happiness - 15;
 		}
 		else {
@@ -905,7 +907,7 @@ Vars.fromScene  = ""
 		}
 		yield return lineBreak();
 		yield return lineBreak();
-		yield return link("return from the match ", "Calculate Goal", null);
+		yield return abort(goToPassage: "Calculate Goal");
 		yield return text(" ");
 		yield break;
 	}

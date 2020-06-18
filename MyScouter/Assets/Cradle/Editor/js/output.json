@@ -3924,11 +3924,11 @@
                 "Tags": "activity",
                 "Tokens": [
                     {
-                        "innerText": "Player workingout..",
-                        "text": "<!--Player workingout..-->",
+                        "innerText": "Player practicing..",
+                        "text": "<!--Player practicing..-->",
                         "tokens": [
                             {
-                                "text": "Player workingout..",
+                                "text": "Player practicing..",
                                 "type": "text"
                             }
                         ],
@@ -3939,178 +3939,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "if: $tiredness <= 90",
+                        "innerText": "if: $physicalShape <= 90",
                         "name": "if",
-                        "text": "(if: $tiredness <= 90)",
-                        "tokens": [
-                            {
-                                "text": "if:",
-                                "type": "macroName"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "name": "tiredness",
-                                "text": "$tiredness",
-                                "type": "variable"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "text": "<=",
-                                "type": "inequality"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "text": "90",
-                                "type": "number",
-                                "value": 90
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "innerText": "(set: $tiredness to $tiredness + 10)",
-                        "text": "[(set: $tiredness to $tiredness + 10)]",
-                        "tokens": [
-                            {
-                                "innerText": "set: $tiredness to $tiredness + 10",
-                                "name": "set",
-                                "text": "(set: $tiredness to $tiredness + 10)",
-                                "tokens": [
-                                    {
-                                        "text": "set:",
-                                        "type": "macroName"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "tiredness",
-                                        "text": "$tiredness",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "to",
-                                        "type": "to"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "tiredness",
-                                        "text": "$tiredness",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "+",
-                                        "type": "addition"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "10",
-                                        "type": "number",
-                                        "value": 10
-                                    }
-                                ],
-                                "type": "macro"
-                            }
-                        ],
-                        "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "else:",
-                        "name": "else",
-                        "text": "(else:)",
-                        "tokens": [
-                            {
-                                "text": "else:",
-                                "type": "macroName"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "innerText": "(set: $tiredness to 100)",
-                        "text": "[(set: $tiredness to 100)]",
-                        "tokens": [
-                            {
-                                "innerText": "set: $tiredness to 100",
-                                "name": "set",
-                                "text": "(set: $tiredness to 100)",
-                                "tokens": [
-                                    {
-                                        "text": "set:",
-                                        "type": "macroName"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "tiredness",
-                                        "text": "$tiredness",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "to",
-                                        "type": "to"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "100",
-                                        "type": "number",
-                                        "value": 100
-                                    }
-                                ],
-                                "type": "macro"
-                            }
-                        ],
-                        "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "if: $physicalShape <= 80",
-                        "name": "if",
-                        "text": "(if: $physicalShape <= 80)",
+                        "text": "(if: $physicalShape <= 90)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -4138,21 +3969,21 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "80",
+                                "text": "90",
                                 "type": "number",
-                                "value": 80
+                                "value": 90
                             }
                         ],
                         "type": "macro"
                     },
                     {
-                        "innerText": "(set: $physicalShape to $physicalShape + 20)",
-                        "text": "[(set: $physicalShape to $physicalShape + 20)]",
+                        "innerText": "(set: $physicalShape to $physicalShape + 10)",
+                        "text": "[(set: $physicalShape to $physicalShape + 10)]",
                         "tokens": [
                             {
-                                "innerText": "set: $physicalShape to $physicalShape + 20",
+                                "innerText": "set: $physicalShape to $physicalShape + 10",
                                 "name": "set",
-                                "text": "(set: $physicalShape to $physicalShape + 20)",
+                                "text": "(set: $physicalShape to $physicalShape + 10)",
                                 "tokens": [
                                     {
                                         "text": "set:",
@@ -4197,9 +4028,9 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "20",
+                                        "text": "10",
                                         "type": "number",
-                                        "value": 20
+                                        "value": 10
                                     }
                                 ],
                                 "type": "macro"
@@ -4273,182 +4104,9 @@
                         "type": "br"
                     },
                     {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "if: $hunger <= 90",
+                        "innerText": "if: $motivation <= 90",
                         "name": "if",
-                        "text": "(if: $hunger <= 90)",
-                        "tokens": [
-                            {
-                                "text": "if:",
-                                "type": "macroName"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "name": "hunger",
-                                "text": "$hunger",
-                                "type": "variable"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "text": "<=",
-                                "type": "inequality"
-                            },
-                            {
-                                "text": " ",
-                                "type": "whitespace"
-                            },
-                            {
-                                "text": "90",
-                                "type": "number",
-                                "value": 90
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "innerText": "(set: $hunger to $hunger + 10)",
-                        "text": "[(set: $hunger to $hunger + 10)]",
-                        "tokens": [
-                            {
-                                "innerText": "set: $hunger to $hunger + 10",
-                                "name": "set",
-                                "text": "(set: $hunger to $hunger + 10)",
-                                "tokens": [
-                                    {
-                                        "text": "set:",
-                                        "type": "macroName"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "hunger",
-                                        "text": "$hunger",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "to",
-                                        "type": "to"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "hunger",
-                                        "text": "$hunger",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "+",
-                                        "type": "addition"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "10",
-                                        "type": "number",
-                                        "value": 10
-                                    }
-                                ],
-                                "type": "macro"
-                            }
-                        ],
-                        "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "else:",
-                        "name": "else",
-                        "text": "(else:)",
-                        "tokens": [
-                            {
-                                "text": "else:",
-                                "type": "macroName"
-                            }
-                        ],
-                        "type": "macro"
-                    },
-                    {
-                        "innerText": "(set: $hunger to 100)",
-                        "text": "[(set: $hunger to 100)]",
-                        "tokens": [
-                            {
-                                "innerText": "set: $hunger to 100",
-                                "name": "set",
-                                "text": "(set: $hunger to 100)",
-                                "tokens": [
-                                    {
-                                        "text": "set:",
-                                        "type": "macroName"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "name": "hunger",
-                                        "text": "$hunger",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "to",
-                                        "type": "to"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "100",
-                                        "type": "number",
-                                        "value": 100
-                                    }
-                                ],
-                                "type": "macro"
-                            }
-                        ],
-                        "type": "hook"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "text": "\n",
-                        "type": "br"
-                    },
-                    {
-                        "innerText": "if: $motivation <= 95",
-                        "name": "if",
-                        "text": "(if: $motivation <= 95)",
+                        "text": "(if: $motivation <= 90)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -4476,21 +4134,21 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "95",
+                                "text": "90",
                                 "type": "number",
-                                "value": 95
+                                "value": 90
                             }
                         ],
                         "type": "macro"
                     },
                     {
-                        "innerText": "(set: $motivation to $motivation + 5)",
-                        "text": "[(set: $motivation to $motivation + 5)]",
+                        "innerText": "(set: $motivation to $motivation + 10)",
+                        "text": "[(set: $motivation to $motivation + 10)]",
                         "tokens": [
                             {
-                                "innerText": "set: $motivation to $motivation + 5",
+                                "innerText": "set: $motivation to $motivation + 10",
                                 "name": "set",
-                                "text": "(set: $motivation to $motivation + 5)",
+                                "text": "(set: $motivation to $motivation + 10)",
                                 "tokens": [
                                     {
                                         "text": "set:",
@@ -4535,9 +4193,9 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "5",
+                                        "text": "10",
                                         "type": "number",
-                                        "value": 5
+                                        "value": 10
                                     }
                                 ],
                                 "type": "macro"
@@ -4619,9 +4277,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "if: $motivation > 70",
+                        "innerText": "if: $physicalShape > 70",
                         "name": "if",
-                        "text": "(if: $motivation > 70)",
+                        "text": "(if: $physicalShape > 70)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -4632,8 +4290,8 @@
                                 "type": "whitespace"
                             },
                             {
-                                "name": "motivation",
-                                "text": "$motivation",
+                                "name": "physicalShape",
+                                "text": "$physicalShape",
                                 "type": "variable"
                             },
                             {
@@ -4657,17 +4315,21 @@
                         "type": "macro"
                     },
                     {
-                        "innerText": "I love working it out, I feel like I'm becoming a much better player!! (if: $happiness <= 95)[(set: $happiness to $happiness + 5)](else:)[(set: $happiness to 100)]",
-                        "text": "[I love working it out, I feel like I'm becoming a much better player!! (if: $happiness <= 95)[(set: $happiness to $happiness + 5)](else:)[(set: $happiness to 100)]]",
+                        "innerText": "I could practice for days.. \n(if: $tiredness <= 95)[(set: $tiredness to $tiredness + 5)]\n(else:)[(set: $tiredness to 100)]\n(if: $hunger <= 95)[(set: $hunger to $hunger + 5)]\n(else:)[(set: $hunger to 100)]",
+                        "text": "[I could practice for days.. \n(if: $tiredness <= 95)[(set: $tiredness to $tiredness + 5)]\n(else:)[(set: $tiredness to 100)]\n(if: $hunger <= 95)[(set: $hunger to $hunger + 5)]\n(else:)[(set: $hunger to 100)]]",
                         "tokens": [
                             {
-                                "text": "I love working it out, I feel like I'm becoming a much better player!! ",
+                                "text": "I could practice for days.. ",
                                 "type": "text"
                             },
                             {
-                                "innerText": "if: $happiness <= 95",
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "if: $tiredness <= 95",
                                 "name": "if",
-                                "text": "(if: $happiness <= 95)",
+                                "text": "(if: $tiredness <= 95)",
                                 "tokens": [
                                     {
                                         "text": "if:",
@@ -4678,8 +4340,8 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "name": "happiness",
-                                        "text": "$happiness",
+                                        "name": "tiredness",
+                                        "text": "$tiredness",
                                         "type": "variable"
                                     },
                                     {
@@ -4703,13 +4365,13 @@
                                 "type": "macro"
                             },
                             {
-                                "innerText": "(set: $happiness to $happiness + 5)",
-                                "text": "[(set: $happiness to $happiness + 5)]",
+                                "innerText": "(set: $tiredness to $tiredness + 5)",
+                                "text": "[(set: $tiredness to $tiredness + 5)]",
                                 "tokens": [
                                     {
-                                        "innerText": "set: $happiness to $happiness + 5",
+                                        "innerText": "set: $tiredness to $tiredness + 5",
                                         "name": "set",
-                                        "text": "(set: $happiness to $happiness + 5)",
+                                        "text": "(set: $tiredness to $tiredness + 5)",
                                         "tokens": [
                                             {
                                                 "text": "set:",
@@ -4720,8 +4382,8 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
                                                 "type": "variable"
                                             },
                                             {
@@ -4737,8 +4399,8 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
                                                 "type": "variable"
                                             },
                                             {
@@ -4765,6 +4427,10 @@
                                 "type": "hook"
                             },
                             {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
                                 "innerText": "else:",
                                 "name": "else",
                                 "text": "(else:)",
@@ -4777,13 +4443,13 @@
                                 "type": "macro"
                             },
                             {
-                                "innerText": "(set: $happiness to 100)",
-                                "text": "[(set: $happiness to 100)]",
+                                "innerText": "(set: $tiredness to 100)",
+                                "text": "[(set: $tiredness to 100)]",
                                 "tokens": [
                                     {
-                                        "innerText": "set: $happiness to 100",
+                                        "innerText": "set: $tiredness to 100",
                                         "name": "set",
-                                        "text": "(set: $happiness to 100)",
+                                        "text": "(set: $tiredness to 100)",
                                         "tokens": [
                                             {
                                                 "text": "set:",
@@ -4794,8 +4460,173 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "if: $hunger <= 95",
+                                "name": "if",
+                                "text": "(if: $hunger <= 95)",
+                                "tokens": [
+                                    {
+                                        "text": "if:",
+                                        "type": "macroName"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "hunger",
+                                        "text": "$hunger",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "<=",
+                                        "type": "inequality"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "95",
+                                        "type": "number",
+                                        "value": 95
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $hunger to $hunger + 5)",
+                                "text": "[(set: $hunger to $hunger + 5)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $hunger to $hunger + 5",
+                                        "name": "set",
+                                        "text": "(set: $hunger to $hunger + 5)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "+",
+                                                "type": "addition"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "5",
+                                                "type": "number",
+                                                "value": 5
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "else:",
+                                "name": "else",
+                                "text": "(else:)",
+                                "tokens": [
+                                    {
+                                        "text": "else:",
+                                        "type": "macroName"
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $hunger to 100)",
+                                "text": "[(set: $hunger to 100)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $hunger to 100",
+                                        "name": "set",
+                                        "text": "(set: $hunger to 100)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
                                                 "type": "variable"
                                             },
                                             {
@@ -4845,11 +4676,11 @@
                         "type": "macro"
                     },
                     {
-                        "innerText": "I wish I could go out right now..\n(if: $happiness >= 5)[(set: $happiness to $happiness - 5)]\n(else:)[(set: $happiness to 0)]",
-                        "text": "[I wish I could go out right now..\n(if: $happiness >= 5)[(set: $happiness to $happiness - 5)]\n(else:)[(set: $happiness to 0)]]",
+                        "innerText": "This practice is really hard..\n(if: $tiredness <= 90)[(set: $tiredness to $tiredness + 10)]\n(else:)[(set: $tiredness to 100)]\n(if: $hunger <= 90)[(set: $hunger to $hunger + 10)]\n(else:)[(set: $hunger to 100)]",
+                        "text": "[This practice is really hard..\n(if: $tiredness <= 90)[(set: $tiredness to $tiredness + 10)]\n(else:)[(set: $tiredness to 100)]\n(if: $hunger <= 90)[(set: $hunger to $hunger + 10)]\n(else:)[(set: $hunger to 100)]]",
                         "tokens": [
                             {
-                                "text": "I wish I could go out right now..",
+                                "text": "This practice is really hard..",
                                 "type": "text"
                             },
                             {
@@ -4857,9 +4688,9 @@
                                 "type": "br"
                             },
                             {
-                                "innerText": "if: $happiness >= 5",
+                                "innerText": "if: $tiredness <= 90",
                                 "name": "if",
-                                "text": "(if: $happiness >= 5)",
+                                "text": "(if: $tiredness <= 90)",
                                 "tokens": [
                                     {
                                         "text": "if:",
@@ -4870,8 +4701,8 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "name": "happiness",
-                                        "text": "$happiness",
+                                        "name": "tiredness",
+                                        "text": "$tiredness",
                                         "type": "variable"
                                     },
                                     {
@@ -4879,7 +4710,7 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": ">=",
+                                        "text": "<=",
                                         "type": "inequality"
                                     },
                                     {
@@ -4887,21 +4718,21 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "5",
+                                        "text": "90",
                                         "type": "number",
-                                        "value": 5
+                                        "value": 90
                                     }
                                 ],
                                 "type": "macro"
                             },
                             {
-                                "innerText": "(set: $happiness to $happiness - 5)",
-                                "text": "[(set: $happiness to $happiness - 5)]",
+                                "innerText": "(set: $tiredness to $tiredness + 10)",
+                                "text": "[(set: $tiredness to $tiredness + 10)]",
                                 "tokens": [
                                     {
-                                        "innerText": "set: $happiness to $happiness - 5",
+                                        "innerText": "set: $tiredness to $tiredness + 10",
                                         "name": "set",
-                                        "text": "(set: $happiness to $happiness - 5)",
+                                        "text": "(set: $tiredness to $tiredness + 10)",
                                         "tokens": [
                                             {
                                                 "text": "set:",
@@ -4912,8 +4743,8 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
                                                 "type": "variable"
                                             },
                                             {
@@ -4929,8 +4760,8 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
                                                 "type": "variable"
                                             },
                                             {
@@ -4938,17 +4769,17 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "text": "-",
-                                                "type": "subtraction"
+                                                "text": "+",
+                                                "type": "addition"
                                             },
                                             {
                                                 "text": " ",
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "text": "5",
+                                                "text": "10",
                                                 "type": "number",
-                                                "value": 5
+                                                "value": 10
                                             }
                                         ],
                                         "type": "macro"
@@ -4973,13 +4804,13 @@
                                 "type": "macro"
                             },
                             {
-                                "innerText": "(set: $happiness to 0)",
-                                "text": "[(set: $happiness to 0)]",
+                                "innerText": "(set: $tiredness to 100)",
+                                "text": "[(set: $tiredness to 100)]",
                                 "tokens": [
                                     {
-                                        "innerText": "set: $happiness to 0",
+                                        "innerText": "set: $tiredness to 100",
                                         "name": "set",
-                                        "text": "(set: $happiness to 0)",
+                                        "text": "(set: $tiredness to 100)",
                                         "tokens": [
                                             {
                                                 "text": "set:",
@@ -4990,8 +4821,8 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "name": "happiness",
-                                                "text": "$happiness",
+                                                "name": "tiredness",
+                                                "text": "$tiredness",
                                                 "type": "variable"
                                             },
                                             {
@@ -5007,8 +4838,174 @@
                                                 "type": "whitespace"
                                             },
                                             {
-                                                "text": "0",
-                                                "type": "number"
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "if: $hunger <= 90",
+                                "name": "if",
+                                "text": "(if: $hunger <= 90)",
+                                "tokens": [
+                                    {
+                                        "text": "if:",
+                                        "type": "macroName"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "hunger",
+                                        "text": "$hunger",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "<=",
+                                        "type": "inequality"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "90",
+                                        "type": "number",
+                                        "value": 90
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $hunger to $hunger + 10)",
+                                "text": "[(set: $hunger to $hunger + 10)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $hunger to $hunger + 10",
+                                        "name": "set",
+                                        "text": "(set: $hunger to $hunger + 10)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "+",
+                                                "type": "addition"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "10",
+                                                "type": "number",
+                                                "value": 10
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "else:",
+                                "name": "else",
+                                "text": "(else:)",
+                                "tokens": [
+                                    {
+                                        "text": "else:",
+                                        "type": "macroName"
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $hunger to 100)",
+                                "text": "[(set: $hunger to 100)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $hunger to 100",
+                                        "name": "set",
+                                        "text": "(set: $hunger to 100)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "hunger",
+                                                "text": "$hunger",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
                                             }
                                         ],
                                         "type": "macro"
@@ -9245,16 +9242,16 @@
                         "type": "macro"
                     },
                     {
-                        "innerText": "(goto: \"Game Won\")",
-                        "text": "[(goto: \"Game Won\")]",
+                        "innerText": "(set: $isWin to true)",
+                        "text": "[(set: $isWin to true)]",
                         "tokens": [
                             {
-                                "innerText": "goto: \"Game Won\"",
-                                "name": "goto",
-                                "text": "(goto: \"Game Won\")",
+                                "innerText": "set: $isWin to true",
+                                "name": "set",
+                                "text": "(set: $isWin to true)",
                                 "tokens": [
                                     {
-                                        "text": "goto:",
+                                        "text": "set:",
                                         "type": "macroName"
                                     },
                                     {
@@ -9262,9 +9259,25 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "innerText": "Game Won",
-                                        "text": "\"Game Won\"",
-                                        "type": "string"
+                                        "name": "isWin",
+                                        "text": "$isWin",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "to",
+                                        "type": "to"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "true",
+                                        "type": "boolean"
                                     }
                                 ],
                                 "type": "macro"
@@ -9289,16 +9302,16 @@
                         "type": "macro"
                     },
                     {
-                        "innerText": "(goto: \"Game Lost\")",
-                        "text": "[(goto: \"Game Lost\")]",
+                        "innerText": "(set: $isWin to false)",
+                        "text": "[(set: $isWin to false)]",
                         "tokens": [
                             {
-                                "innerText": "goto: \"Game Lost\"",
-                                "name": "goto",
-                                "text": "(goto: \"Game Lost\")",
+                                "innerText": "set: $isWin to false",
+                                "name": "set",
+                                "text": "(set: $isWin to false)",
                                 "tokens": [
                                     {
-                                        "text": "goto:",
+                                        "text": "set:",
                                         "type": "macroName"
                                     },
                                     {
@@ -9306,15 +9319,77 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "innerText": "Game Lost",
-                                        "text": "\"Game Lost\"",
-                                        "type": "string"
+                                        "name": "isWin",
+                                        "text": "$isWin",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "to",
+                                        "type": "to"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "false",
+                                        "type": "boolean"
                                     }
                                 ],
                                 "type": "macro"
                             }
                         ],
                         "type": "hook"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $fromScene to \"Player Game\"",
+                        "name": "set",
+                        "text": "(set: $fromScene to \"Player Game\")",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "fromScene",
+                                "text": "$fromScene",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "Player Game",
+                                "text": "\"Player Game\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
                     }
                 ]
             },
@@ -10144,22 +10219,17 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "link-goto:\"return from the match \",\"Calculate Goal\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"return from the match \",\"Calculate Goal\")",
+                        "innerText": "goto: \"Calculate Goal\"",
+                        "name": "goto",
+                        "text": "(goto: \"Calculate Goal\")",
                         "tokens": [
                             {
-                                "text": "link-goto:",
+                                "text": "goto:",
                                 "type": "macroName"
                             },
                             {
-                                "innerText": "return from the match ",
-                                "text": "\"return from the match \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
+                                "text": " ",
+                                "type": "whitespace"
                             },
                             {
                                 "innerText": "Calculate Goal",
@@ -10168,10 +10238,6 @@
                             }
                         ],
                         "type": "macro"
-                    },
-                    {
-                        "text": " ",
-                        "type": "text"
                     }
                 ]
             },
@@ -10482,9 +10548,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "if: $motivation <= 10",
+                        "innerText": "if: $motivation >= 10",
                         "name": "if",
-                        "text": "(if: $motivation <= 10)",
+                        "text": "(if: $motivation >= 10)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -10504,7 +10570,7 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "<=",
+                                "text": ">=",
                                 "type": "inequality"
                             },
                             {
@@ -10650,9 +10716,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "if: $happiness <= 15",
+                        "innerText": "if: $happiness >= 15",
                         "name": "if",
-                        "text": "(if: $happiness <= 15)",
+                        "text": "(if: $happiness >= 15)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -10672,7 +10738,7 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "<=",
+                                "text": ">=",
                                 "type": "inequality"
                             },
                             {
@@ -10987,22 +11053,17 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "link-goto:\"return from the match \",\"Calculate Goal\"",
-                        "name": "linkgoto",
-                        "text": "(link-goto:\"return from the match \",\"Calculate Goal\")",
+                        "innerText": "goto: \"Calculate Goal\"",
+                        "name": "goto",
+                        "text": "(goto: \"Calculate Goal\")",
                         "tokens": [
                             {
-                                "text": "link-goto:",
+                                "text": "goto:",
                                 "type": "macroName"
                             },
                             {
-                                "innerText": "return from the match ",
-                                "text": "\"return from the match \"",
-                                "type": "string"
-                            },
-                            {
-                                "text": ",",
-                                "type": "comma"
+                                "text": " ",
+                                "type": "whitespace"
                             },
                             {
                                 "innerText": "Calculate Goal",

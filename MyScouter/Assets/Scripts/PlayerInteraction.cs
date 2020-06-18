@@ -56,7 +56,7 @@ public class PlayerInteraction : Interaction
                         break;
                     case "Player Practice":
                         isFromScene = false;
-                         stopTwin();
+                        stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                         StartCoroutine(StreamVideo.instance.playVideo(-1));
                         resetVar();
@@ -72,6 +72,31 @@ public class PlayerInteraction : Interaction
                         stopTwin();
                         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                         StartCoroutine(CameraControler.instance.showScene(dancingTime, 1));
+                        isFromScene = false;
+                        resetVar();
+                        break;
+                    case "Player Game":
+                        Debug.Log("Player Game");
+                        stopTwin();
+                        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                        if(NPC.instance.story.Vars.GetMember("isWin") == true)
+                        {
+                            
+                            StartCoroutine(StreamVideo.instance.playVideo(5));
+                            NPC.instance.currentPassage = "Game Won";
+                            NPC.instance.GoToPassage();
+                            // play winning game video and go to scene "Game Won"
+                            // need to check if change logic in twine to go automaticaly to calculate goal
+                            // or leave as is - go when player clicks
+                        }
+                        else
+                        {
+                            StartCoroutine(StreamVideo.instance.playVideo(6));
+                            NPC.instance.currentPassage = "Game Lost";
+                            NPC.instance.GoToPassage();
+                            // play loosing game video and go to scene "Game Lost"
+                            // same check as win
+                        }
                         isFromScene = false;
                         resetVar();
                         break;

@@ -88,24 +88,23 @@ $fromScene to &quot;&quot;
 
 (set: $flagNum to 2)
 (set: $fromScene to &quot;Player Workout&quot;)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="activity" position="1000,1002" size="100,100">&lt;!--Player workingout..--&gt;
-(if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
-(else:)[(set: $tiredness to 100)]
-
-(if: $physicalShape &lt;= 80)[(set: $physicalShape to $physicalShape + 20)]
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="activity" position="1000,1003.6666666666666" size="100,100">&lt;!--Player practicing..--&gt;
+(if: $physicalShape &lt;= 90)[(set: $physicalShape to $physicalShape + 10)]
 (else:)[(set: $physicalShape to 100)]
-
-(if: $hunger &lt;= 90)[(set: $hunger to $hunger + 10)]
-(else:)[(set: $hunger to 100)]
-
-(if: $motivation &lt;= 95)[(set: $motivation to $motivation + 5)]
+(if: $motivation &lt;= 90)[(set: $motivation to $motivation + 10)]
 (else:)[(set: $motivation to 100)]
 	
-(if: $motivation &gt; 70)[I love working it out, I feel like I&#39;m becoming a much better player!! (if: $happiness &lt;= 95)[(set: $happiness to $happiness + 5)](else:)[(set: $happiness to 100)]]
+(if: $physicalShape &gt; 70)[I could practice for days.. 
+(if: $tiredness &lt;= 95)[(set: $tiredness to $tiredness + 5)]
+(else:)[(set: $tiredness to 100)]
+(if: $hunger &lt;= 95)[(set: $hunger to $hunger + 5)]
+(else:)[(set: $hunger to 100)]]
 
-(else:)[I wish I could go out right now..
-(if: $happiness &gt;= 5)[(set: $happiness to $happiness - 5)]
-(else:)[(set: $happiness to 0)]]
+(else:)[This practice is really hard..
+(if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
+(else:)[(set: $tiredness to 100)]
+(if: $hunger &lt;= 90)[(set: $hunger to $hunger + 10)]
+(else:)[(set: $hunger to 100)]]
 
 (set: $flagNum to 3)
 (set: $fromScene to &quot;Player Practice&quot;)
@@ -166,7 +165,7 @@ $fromScene to &quot;&quot;
 (else-if: $flagNum is 4)[(set: $isEating to true)]
 (else-if: $flagNum is 5)[(set: $isOut to true)]
 
-(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2200,1197" size="100,100">(set: $waitTime to 0)
+(goto: &quot;Calculate Play&quot;)</tw-passagedata><tw-passagedata pid="15" name="Player Game" tags="game" position="2198.3333333333335,1043.6666666666667" size="100,100">(set: $waitTime to 0)
 (set: $moneyAmount to $moneyAmount - 100)
 
 (set: $rcOne to (random: 1, 100))
@@ -174,9 +173,11 @@ $fromScene to &quot;&quot;
 (set: $rcThree to (random: 1, 100))
 (set: $avrChance to ( $rcOne + $rcTwo + $rcThree)/3)
 
-(if: $goal &gt; $avrChance)[(goto: &quot;Game Won&quot;)]
-(else:)[(goto: &quot;Game Lost&quot;)]</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2099,101" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
-(else:)[(set: $canPlay to false)]</tw-passagedata><tw-passagedata pid="17" name="Game Won" tags="game" position="2100,1300" size="100,100">Congrutalions!! you&#39;ve won the match!!
+(if: $goal &gt; $avrChance)[(set: $isWin to true)]
+(else:)[(set: $isWin to false)]
+
+(set: $fromScene to &quot;Player Game&quot;)</tw-passagedata><tw-passagedata pid="16" name="Calculate Play" tags="" position="2099,101" size="100,100">(if: ($motivation &gt;= 70) and ($waitTime &gt; 3) and ($moneyAmount &gt;= 100))[(set: $canPlay to true)]
+(else:)[(set: $canPlay to false)]</tw-passagedata><tw-passagedata pid="17" name="Game Won" tags="game" position="2098.3333333333335,1301.6666666666667" size="100,100">Congrutalions!! you&#39;ve won the match!!
 
 (set: $moneyAmount to $moneyAmount + 400)
 
@@ -189,7 +190,7 @@ $fromScene to &quot;&quot;
 (if: $physicalShape &lt;= 90)[(set: $physicalShape to $physicalShape + 10)]
 (else:)[(set: $physicalShape to 100)]
 
-[[return from the match -&gt;Calculate Goal]] </tw-passagedata><tw-passagedata pid="18" name="Loan Money" tags="" position="2696,401" size="100,100">(set: $waitTime to $waitTime + 1)
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="18" name="Loan Money" tags="" position="2696,401" size="100,100">(set: $waitTime to $waitTime + 1)
 (set: $loanRound to 0)
 
 Banker: Do you want a loan?
@@ -201,16 +202,16 @@ Banker: Here are your options:
 
 (set: $moneyAmount to $moneyAmount - 200)
 
-(if: $motivation &lt;= 10)[(set: $motivation to $motivation - 10)]
+(if: $motivation &gt;= 10)[(set: $motivation to $motivation - 10)]
 (else:)[(set: $motivation to 0)]
 
-(if: $happiness &lt;= 15)[(set: $happiness to $happiness - 15)]
+(if: $happiness &gt;= 15)[(set: $happiness to $happiness - 15)]
 (else:)[(set: $happiness to 0)]
 
 (if: $physicalShape &lt;= 90)[(set: $physicalShape to $physicalShape + 10)]
 (else:)[(set: $physicalShape to 100)]
 
-[[return from the match -&gt;Calculate Goal]] </tw-passagedata><tw-passagedata pid="20" name="High Loan" tags="loan" position="2546,551" size="100,100">(set: $moneyAmount to $moneyAmount + 400)
+(goto: &quot;Calculate Goal&quot;) </tw-passagedata><tw-passagedata pid="20" name="High Loan" tags="loan" position="2546,551" size="100,100">(set: $moneyAmount to $moneyAmount + 400)
 (set: $isLoan to true)
 (set: $daysToReturn to 10)
 (goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="21" name="Low Loan" tags="loan" position="2849,553" size="100,100">(set: $moneyAmount to $moneyAmount + 100)

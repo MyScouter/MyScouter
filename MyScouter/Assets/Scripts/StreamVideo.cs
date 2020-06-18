@@ -32,7 +32,6 @@ public class StreamVideo : MonoBehaviour
         }
 
         video.clip = videos[number];
-        raw.enabled = true;
         video.Prepare();
         while (!video.isPrepared)
         {
