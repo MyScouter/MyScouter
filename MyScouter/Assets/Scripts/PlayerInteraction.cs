@@ -14,6 +14,7 @@ public class PlayerInteraction : Interaction
         //base.FindObject();
         base.isClicked = false;
         base.setupGui();
+
     }
 
 
@@ -21,8 +22,8 @@ public class PlayerInteraction : Interaction
     public override void OnTriggerStay(Collider other){
         if (other.gameObject == player)     //player has collided with trigger
         {
-            
-            ShowMassage.instanse.showMassage = false;
+
+            msg = "Press F to start conversation";
             showInteractMsg = true;
             if (Input.GetKey(KeyCode.F) && !isClicked)
             {
@@ -36,9 +37,6 @@ public class PlayerInteraction : Interaction
             }
             if(isFromScene)
             {
-                //Debug.Log(NPC.instance.story.Vars.GetMember("fromScene").ToString());
-
-                //Debug.Log(NPC.instance.currentPassage);
                 switch (NPC.instance.story.Vars.GetMember("fromScene").ToString())
                 {
                     case "Player Workout":
@@ -100,6 +98,7 @@ public class PlayerInteraction : Interaction
                         }
                         isFromScene = false;
                         resetVar();
+
                         break;
                 }
 
@@ -111,6 +110,7 @@ public class PlayerInteraction : Interaction
         if (other.gameObject == player)     //player has exited trigger
         {
             //hide interact message as player may not have been looking at object when they left
+            msg = "PLEASE GO TALK TO THE PLAYER";
             stopTwin();
             MouseLook.enabled = true;
             ShowMassage.instanse.showMassage = true;
@@ -133,5 +133,8 @@ public class PlayerInteraction : Interaction
         MouseLook.enabled = true;
         isClicked = false;
         isFromScene = true;
+        player.SetActive(false);
+        player.transform.position = moveTo.position;
+        player.SetActive(true);
     }
 }

@@ -7,19 +7,21 @@ using UnityEngine.UIElements;
 public class PhoneInteraction : Interaction
 {
     public GameObject player1;
-    public Transform moveTo;
     
 
     private void Awake() {
+        
         base.isClicked = false;
         base.setupGui();
+        showInteractMsg = true;
+        msg = "PLEASE GO TO THE PHONE";
     }
     public override void OnTriggerStay(Collider other)
     {
         if (other.gameObject == player1)     //player has collided with trigger
         {
-            ShowMassage.instanse.showMassage = false;
-            showInteractMsg = true;
+            //showInteractMsg = true;
+            msg = "Press F to start conversation";
             if (Input.GetKey(KeyCode.F) && !isClicked)
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.None;
@@ -29,13 +31,17 @@ public class PhoneInteraction : Interaction
                 NPC.instance.Active();
                 NPC.instance.GoToPassage();
                 isClicked = true;
+                showInteractMsg = false;
             }
+            
         }
     }
 
     public override void OnTriggerExit(Collider other)
     {
+        showInteractMsg = true;
         base.OnTriggerExit(other);
+        msg = "PLEASE GO TALK TO THE PHONE";
         MouseLook.enabled = true;
 
     }
@@ -48,8 +54,6 @@ public class PhoneInteraction : Interaction
             {
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 MouseLook.enabled = true;
-                ShowMassage.instanse.changingMsg = "Please go talk to player";
-                ShowMassage.instanse.showMassage = true;
                 TextController.instance.isInstantiated = true;
                 TextController.instance.updateScore = true;
                 showInteractMsg = false;

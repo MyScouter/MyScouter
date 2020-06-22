@@ -39,6 +39,8 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 			VarDef("waitTime", () => this.@waitTime, val => this.@waitTime = val);
 			VarDef("isLoan", () => this.@isLoan, val => this.@isLoan = val);
 			VarDef("fromScene", () => this.@fromScene, val => this.@fromScene = val);
+			VarDef("isUpgrade", () => this.@isUpgrade, val => this.@isUpgrade = val);
+			VarDef("boostRounds", () => this.@boostRounds, val => this.@boostRounds = val);
 			VarDef("motivation", () => this.@motivation, val => this.@motivation = val);
 			VarDef("physicalShape", () => this.@physicalShape, val => this.@physicalShape = val);
 			VarDef("happiness", () => this.@happiness, val => this.@happiness = val);
@@ -69,6 +71,8 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		public StoryVar @waitTime;
 		public StoryVar @isLoan;
 		public StoryVar @fromScene;
+		public StoryVar @isUpgrade;
+		public StoryVar @boostRounds;
 		public StoryVar @motivation;
 		public StoryVar @physicalShape;
 		public StoryVar @happiness;
@@ -134,6 +138,8 @@ public partial class @Scouter_Career: Cradle.StoryFormats.Harlowe.HarloweStory
 		passage26_Init();
 		passage27_Init();
 		passage28_Init();
+		passage29_Init();
+		passage30_Init();
 	}
 
 	// ---------------
@@ -199,7 +205,9 @@ Vars.loanRound  = 0;
 Vars.daysToReturn  = 0; 
 Vars.waitTime  = -1; 
 Vars.isLoan  = false; 
-Vars.fromScene  = ""
+Vars.fromScene  = ""; 
+Vars.isUpgrade  = false; 
+Vars.boostRounds  = 0
 ;
 		yield break;
 	}
@@ -365,6 +373,11 @@ Vars.fromScene  = ""
 	IStoryThread passage8_Main()
 	{
 		yield return lineBreak();
+		if(Vars.boostRounds == 0) {
+			Vars.isUpgrade  = false;
+		}
+		yield return lineBreak();
+		yield return lineBreak();
 		if(Vars.tiredness <= 90) {
 			Vars.tiredness  = Vars.tiredness + 10;
 		}
@@ -373,11 +386,21 @@ Vars.fromScene  = ""
 		}
 		yield return lineBreak();
 		yield return lineBreak();
-		if(Vars.physicalShape <= 80) {
-			Vars.physicalShape  = Vars.physicalShape + 20;
+		if(Vars.isUpgrade == true) {
+			if(Vars.physicalShape <= 70) {
+				Vars.physicalShape  = Vars.physicalShape + 30;
+			}
+			else {
+				Vars.physicalShape  = 100;
+			}
 		}
 		else {
-			Vars.physicalShape  = 100;
+			if(Vars.physicalShape <= 80) {
+				Vars.physicalShape  = Vars.physicalShape + 20;
+			}
+			else {
+				Vars.physicalShape  = 100;
+			}
 		}
 		yield return lineBreak();
 		yield return lineBreak();
@@ -421,6 +444,8 @@ Vars.fromScene  = ""
 		Vars.flagNum  = 2;
 		yield return lineBreak();
 		Vars.fromScene  = "Player Workout";
+		yield return lineBreak();
+		Vars.boostRounds  = Vars.boostRounds - 1;
 		yield return lineBreak();
 		yield return abort(goToPassage: "Calculate Goal");
 		yield break;
@@ -1139,6 +1164,57 @@ Vars.fromScene  = ""
 		yield return text("Additionaly - every once in a while you'll be able to send your player on a match - win the match and you gain money, lose the match and you lose money.");
 		yield return lineBreak();
 		yield return link("Ok, I get it now.. ", "First Call", null);
+		yield break;
+	}
+
+
+	// .............
+	// #29: Interaction Trainer
+
+	void passage29_Init()
+	{
+		this.Passages[@"Interaction Trainer"] = new StoryPassage(@"Interaction Trainer", new string[]{  }, passage29_Main);
+	}
+
+	IStoryThread passage29_Main()
+	{
+		if(Vars.waitTime < 3) {
+			yield return text("Hi, this feature isn't available yet.. ");
+			yield return text(Vars.playerName);
+			yield return text(" needs more training..");
+		}
+		else {
+			yield return text("Hi would you like to improve your players training program?");
+			yield return link("Yes, please.. ", "Yes Intercation", null);
+			yield return lineBreak();
+			yield return link("No, thanks.. ", "After Activity", null);
+		}
+		yield return lineBreak();
+		yield return lineBreak();
+		yield break;
+	}
+
+
+	// .............
+	// #30: Yes Intercation
+
+	void passage30_Init()
+	{
+		this.Passages[@"Yes Intercation"] = new StoryPassage(@"Yes Intercation", new string[]{  }, passage30_Main);
+	}
+
+	IStoryThread passage30_Main()
+	{
+		Vars.moneyAmount  = Vars.moneyAmount - 100;
+		yield return lineBreak();
+		Vars.isUpgrade  = true;
+		yield return lineBreak();
+		Vars.boostRounds  = 3;
+		yield return lineBreak();
+		yield return lineBreak();
+		yield return text("Training program purchased - the program will hold for 3 workouts..");
+		yield return lineBreak();
+		yield return abort(goToPassage: "After Activity");
 		yield break;
 	}
 

@@ -19,6 +19,7 @@ public class StreamVideo : MonoBehaviour
     public RawImage raw;
     public VideoPlayer video;
     public string[] videoName;
+    //public static volatile bool isPlaying;
     //public AudioSource source;
     private void Start()
     {
@@ -43,7 +44,7 @@ public class StreamVideo : MonoBehaviour
         raw.enabled = true;
         raw.texture = video.texture;
         video.Play();
-        //source.Play();
+       
         while (video.isPlaying)
         {
             yield return null;

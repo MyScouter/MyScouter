@@ -324,9 +324,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\"\n",
+                        "innerText": "set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\",\n$isUpgrade to false,\n$boostRounds to 0\n",
                         "name": "set",
-                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\"\n)",
+                        "text": "(set: \n$isTired to false,\n$isWorkout to false,\n$isPractice to false,\n$isEating to false,\n$isOut to false,\n$moneyAmount to 500,\n$canPlay to false,\n$loanRound to 0,\n$daysToReturn to 0,\n$waitTime to -1,\n$isLoan to false,\n$fromScene to \"\",\n$isUpgrade to false,\n$boostRounds to 0\n)",
                         "tokens": [
                             {
                                 "text": "set:",
@@ -685,6 +685,64 @@
                             {
                                 "text": "\"\"",
                                 "type": "string"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "isUpgrade",
+                                "text": "$isUpgrade",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "false",
+                                "type": "boolean"
+                            },
+                            {
+                                "text": ",",
+                                "type": "comma"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "text"
+                            },
+                            {
+                                "name": "boostRounds",
+                                "text": "$boostRounds",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "0",
+                                "type": "number"
                             },
                             {
                                 "text": "\n",
@@ -2727,6 +2785,95 @@
                         "type": "br"
                     },
                     {
+                        "innerText": "if: $boostRounds is 0",
+                        "name": "if",
+                        "text": "(if: $boostRounds is 0)",
+                        "tokens": [
+                            {
+                                "text": "if:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "boostRounds",
+                                "text": "$boostRounds",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "is",
+                                "type": "is"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "0",
+                                "type": "number"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "innerText": "(set: $isUpgrade to false)",
+                        "text": "[(set: $isUpgrade to false)]",
+                        "tokens": [
+                            {
+                                "innerText": "set: $isUpgrade to false",
+                                "name": "set",
+                                "text": "(set: $isUpgrade to false)",
+                                "tokens": [
+                                    {
+                                        "text": "set:",
+                                        "type": "macroName"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "name": "isUpgrade",
+                                        "text": "$isUpgrade",
+                                        "type": "variable"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "to",
+                                        "type": "to"
+                                    },
+                                    {
+                                        "text": " ",
+                                        "type": "whitespace"
+                                    },
+                                    {
+                                        "text": "false",
+                                        "type": "boolean"
+                                    }
+                                ],
+                                "type": "macro"
+                            }
+                        ],
+                        "type": "hook"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "innerText": "if: $tiredness <= 90",
                         "name": "if",
                         "text": "(if: $tiredness <= 90)",
@@ -2896,9 +3043,9 @@
                         "type": "br"
                     },
                     {
-                        "innerText": "if: $physicalShape <= 80",
+                        "innerText": "if: $isUpgrade is true",
                         "name": "if",
-                        "text": "(if: $physicalShape <= 80)",
+                        "text": "(if: $isUpgrade is true)",
                         "tokens": [
                             {
                                 "text": "if:",
@@ -2909,8 +3056,8 @@
                                 "type": "whitespace"
                             },
                             {
-                                "name": "physicalShape",
-                                "text": "$physicalShape",
+                                "name": "isUpgrade",
+                                "text": "$isUpgrade",
                                 "type": "variable"
                             },
                             {
@@ -2918,32 +3065,31 @@
                                 "type": "whitespace"
                             },
                             {
-                                "text": "<=",
-                                "type": "inequality"
+                                "text": "is",
+                                "type": "is"
                             },
                             {
                                 "text": " ",
                                 "type": "whitespace"
                             },
                             {
-                                "text": "80",
-                                "type": "number",
-                                "value": 80
+                                "text": "true",
+                                "type": "boolean"
                             }
                         ],
                         "type": "macro"
                     },
                     {
-                        "innerText": "(set: $physicalShape to $physicalShape + 20)",
-                        "text": "[(set: $physicalShape to $physicalShape + 20)]",
+                        "innerText": "(if: $physicalShape <= 70)[(set: $physicalShape to $physicalShape + 30)](else:)[(set: $physicalShape to 100)]",
+                        "text": "[(if: $physicalShape <= 70)[(set: $physicalShape to $physicalShape + 30)](else:)[(set: $physicalShape to 100)]]",
                         "tokens": [
                             {
-                                "innerText": "set: $physicalShape to $physicalShape + 20",
-                                "name": "set",
-                                "text": "(set: $physicalShape to $physicalShape + 20)",
+                                "innerText": "if: $physicalShape <= 70",
+                                "name": "if",
+                                "text": "(if: $physicalShape <= 70)",
                                 "tokens": [
                                     {
-                                        "text": "set:",
+                                        "text": "if:",
                                         "type": "macroName"
                                     },
                                     {
@@ -2960,37 +3106,139 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "to",
-                                        "type": "to"
+                                        "text": "<=",
+                                        "type": "inequality"
                                     },
                                     {
                                         "text": " ",
                                         "type": "whitespace"
                                     },
                                     {
-                                        "name": "physicalShape",
-                                        "text": "$physicalShape",
-                                        "type": "variable"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "+",
-                                        "type": "addition"
-                                    },
-                                    {
-                                        "text": " ",
-                                        "type": "whitespace"
-                                    },
-                                    {
-                                        "text": "20",
+                                        "text": "70",
                                         "type": "number",
-                                        "value": 20
+                                        "value": 70
                                     }
                                 ],
                                 "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $physicalShape to $physicalShape + 30)",
+                                "text": "[(set: $physicalShape to $physicalShape + 30)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $physicalShape to $physicalShape + 30",
+                                        "name": "set",
+                                        "text": "(set: $physicalShape to $physicalShape + 30)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "+",
+                                                "type": "addition"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "30",
+                                                "type": "number",
+                                                "value": 30
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "innerText": "else:",
+                                "name": "else",
+                                "text": "(else:)",
+                                "tokens": [
+                                    {
+                                        "text": "else:",
+                                        "type": "macroName"
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $physicalShape to 100)",
+                                "text": "[(set: $physicalShape to 100)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $physicalShape to 100",
+                                        "name": "set",
+                                        "text": "(set: $physicalShape to 100)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
                             }
                         ],
                         "type": "hook"
@@ -3012,16 +3260,16 @@
                         "type": "macro"
                     },
                     {
-                        "innerText": "(set: $physicalShape to 100)",
-                        "text": "[(set: $physicalShape to 100)]",
+                        "innerText": "(if: $physicalShape <= 80)[(set: $physicalShape to $physicalShape + 20)](else:)[(set: $physicalShape to 100)]",
+                        "text": "[(if: $physicalShape <= 80)[(set: $physicalShape to $physicalShape + 20)](else:)[(set: $physicalShape to 100)]]",
                         "tokens": [
                             {
-                                "innerText": "set: $physicalShape to 100",
-                                "name": "set",
-                                "text": "(set: $physicalShape to 100)",
+                                "innerText": "if: $physicalShape <= 80",
+                                "name": "if",
+                                "text": "(if: $physicalShape <= 80)",
                                 "tokens": [
                                     {
-                                        "text": "set:",
+                                        "text": "if:",
                                         "type": "macroName"
                                     },
                                     {
@@ -3038,20 +3286,139 @@
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "to",
-                                        "type": "to"
+                                        "text": "<=",
+                                        "type": "inequality"
                                     },
                                     {
                                         "text": " ",
                                         "type": "whitespace"
                                     },
                                     {
-                                        "text": "100",
+                                        "text": "80",
                                         "type": "number",
-                                        "value": 100
+                                        "value": 80
                                     }
                                 ],
                                 "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $physicalShape to $physicalShape + 20)",
+                                "text": "[(set: $physicalShape to $physicalShape + 20)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $physicalShape to $physicalShape + 20",
+                                        "name": "set",
+                                        "text": "(set: $physicalShape to $physicalShape + 20)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "+",
+                                                "type": "addition"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "20",
+                                                "type": "number",
+                                                "value": 20
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
+                            },
+                            {
+                                "innerText": "else:",
+                                "name": "else",
+                                "text": "(else:)",
+                                "tokens": [
+                                    {
+                                        "text": "else:",
+                                        "type": "macroName"
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "innerText": "(set: $physicalShape to 100)",
+                                "text": "[(set: $physicalShape to 100)]",
+                                "tokens": [
+                                    {
+                                        "innerText": "set: $physicalShape to 100",
+                                        "name": "set",
+                                        "text": "(set: $physicalShape to 100)",
+                                        "tokens": [
+                                            {
+                                                "text": "set:",
+                                                "type": "macroName"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "name": "physicalShape",
+                                                "text": "$physicalShape",
+                                                "type": "variable"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "to",
+                                                "type": "to"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "whitespace"
+                                            },
+                                            {
+                                                "text": "100",
+                                                "type": "number",
+                                                "value": 100
+                                            }
+                                        ],
+                                        "type": "macro"
+                                    }
+                                ],
+                                "type": "hook"
                             }
                         ],
                         "type": "hook"
@@ -3887,6 +4254,65 @@
                                 "innerText": "Player Workout",
                                 "text": "\"Player Workout\"",
                                 "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $boostRounds to $boostRounds - 1",
+                        "name": "set",
+                        "text": "(set: $boostRounds to $boostRounds - 1)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "boostRounds",
+                                "text": "$boostRounds",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "boostRounds",
+                                "text": "$boostRounds",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "-",
+                                "type": "subtraction"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "1",
+                                "type": "number",
+                                "value": 1
                             }
                         ],
                         "type": "macro"
@@ -12692,6 +13118,344 @@
                             {
                                 "innerText": "First Call",
                                 "text": "\"First Call\"",
+                                "type": "string"
+                            }
+                        ],
+                        "type": "macro"
+                    }
+                ]
+            },
+            {
+                "Name": "Interaction Trainer",
+                "Pid": "29",
+                "Tags": "",
+                "Tokens": [
+                    {
+                        "innerText": "if: $waitTime < 3",
+                        "name": "if",
+                        "text": "(if: $waitTime < 3)",
+                        "tokens": [
+                            {
+                                "text": "if:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "waitTime",
+                                "text": "$waitTime",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "<",
+                                "type": "inequality"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "3",
+                                "type": "number",
+                                "value": 3
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "innerText": "Hi, this feature isn't available yet.. $playerName needs more training..",
+                        "text": "[Hi, this feature isn't available yet.. $playerName needs more training..]",
+                        "tokens": [
+                            {
+                                "text": "Hi, this feature isn't available yet.. ",
+                                "type": "text"
+                            },
+                            {
+                                "name": "playerName",
+                                "text": "$playerName",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " needs more training..",
+                                "type": "text"
+                            }
+                        ],
+                        "type": "hook"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "else:",
+                        "name": "else",
+                        "text": "(else:)",
+                        "tokens": [
+                            {
+                                "text": "else:",
+                                "type": "macroName"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "innerText": "Hi would you like to improve your players training program?[[Yes, please.. ->Yes Intercation]]\n[[No, thanks.. ->After Activity]]",
+                        "text": "[Hi would you like to improve your players training program?[[Yes, please.. ->Yes Intercation]]\n[[No, thanks.. ->After Activity]]]",
+                        "tokens": [
+                            {
+                                "text": "Hi would you like to improve your players training program?",
+                                "type": "text"
+                            },
+                            {
+                                "innerText": "link-goto:\"Yes, please.. \",\"Yes Intercation\"",
+                                "name": "linkgoto",
+                                "text": "(link-goto:\"Yes, please.. \",\"Yes Intercation\")",
+                                "tokens": [
+                                    {
+                                        "text": "link-goto:",
+                                        "type": "macroName"
+                                    },
+                                    {
+                                        "innerText": "Yes, please.. ",
+                                        "text": "\"Yes, please.. \"",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "text": ",",
+                                        "type": "comma"
+                                    },
+                                    {
+                                        "innerText": "Yes Intercation",
+                                        "text": "\"Yes Intercation\"",
+                                        "type": "string"
+                                    }
+                                ],
+                                "type": "macro"
+                            },
+                            {
+                                "text": "\n",
+                                "type": "br"
+                            },
+                            {
+                                "innerText": "link-goto:\"No, thanks.. \",\"After Activity\"",
+                                "name": "linkgoto",
+                                "text": "(link-goto:\"No, thanks.. \",\"After Activity\")",
+                                "tokens": [
+                                    {
+                                        "text": "link-goto:",
+                                        "type": "macroName"
+                                    },
+                                    {
+                                        "innerText": "No, thanks.. ",
+                                        "text": "\"No, thanks.. \"",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "text": ",",
+                                        "type": "comma"
+                                    },
+                                    {
+                                        "innerText": "After Activity",
+                                        "text": "\"After Activity\"",
+                                        "type": "string"
+                                    }
+                                ],
+                                "type": "macro"
+                            }
+                        ],
+                        "type": "hook"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    }
+                ]
+            },
+            {
+                "Name": "Yes Intercation",
+                "Pid": "30",
+                "Tags": "",
+                "Tokens": [
+                    {
+                        "innerText": "set: $moneyAmount to $moneyAmount - 100",
+                        "name": "set",
+                        "text": "(set: $moneyAmount to $moneyAmount - 100)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "moneyAmount",
+                                "text": "$moneyAmount",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "moneyAmount",
+                                "text": "$moneyAmount",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "-",
+                                "type": "subtraction"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "100",
+                                "type": "number",
+                                "value": 100
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $isUpgrade to true",
+                        "name": "set",
+                        "text": "(set: $isUpgrade to true)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "isUpgrade",
+                                "text": "$isUpgrade",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "true",
+                                "type": "boolean"
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "set: $boostRounds to 3",
+                        "name": "set",
+                        "text": "(set: $boostRounds to 3)",
+                        "tokens": [
+                            {
+                                "text": "set:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "name": "boostRounds",
+                                "text": "$boostRounds",
+                                "type": "variable"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "to",
+                                "type": "to"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "text": "3",
+                                "type": "number",
+                                "value": 3
+                            }
+                        ],
+                        "type": "macro"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "text": "Training program purchased - the program will hold for 3 workouts..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
+                        "innerText": "goto: \"After Activity\"",
+                        "name": "goto",
+                        "text": "(goto: \"After Activity\")",
+                        "tokens": [
+                            {
+                                "text": "goto:",
+                                "type": "macroName"
+                            },
+                            {
+                                "text": " ",
+                                "type": "whitespace"
+                            },
+                            {
+                                "innerText": "After Activity",
+                                "text": "\"After Activity\"",
                                 "type": "string"
                             }
                         ],

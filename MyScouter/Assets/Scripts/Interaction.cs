@@ -21,6 +21,9 @@ public class Interaction : MonoBehaviour
     public string currentPassage;
 
     public MouseLook MouseLook;
+
+    public Transform moveTo;
+
     private void Awake()
     {
         isClicked = false;
@@ -49,7 +52,7 @@ public class Interaction : MonoBehaviour
         if (other.gameObject == player)     //player has exited trigger
         {
             //hide interact message as player may not have been looking at object when they left
-            showInteractMsg = false;
+            //showInteractMsg = false;
             isClicked = false;
             background.SetActive(false);
             TestConverstion.SetActive(false);
@@ -70,7 +73,8 @@ public class Interaction : MonoBehaviour
         guiStyle.fontSize = 50;
         guiStyle.fontStyle = FontStyle.Bold;
         guiStyle.normal.textColor = Color.white;
-        msg = "Press F to start conversation";
+        //msg = "Press F to start conversation";
+        msg = "";
     }
 
 
