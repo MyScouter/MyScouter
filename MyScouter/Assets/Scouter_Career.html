@@ -70,7 +70,7 @@ $boostRounds to 0
 (else:)[(set: $hunger to 100)]
 (set: $flagNum to 1)
 (set: $fromScene to &quot;Player Resting&quot;)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="activity" position="603.3333333333334,997" size="100,100">&lt;!--Player workingout..--&gt;
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="8" name="Player Workout" tags="activity" position="603,997" size="100,100">&lt;!--Player workingout..--&gt;
 (if: $boostRounds is 0)[(set: $isUpgrade to false)]
 
 (if: $tiredness &lt;= 90)[(set: $tiredness to $tiredness + 10)]
@@ -93,7 +93,7 @@ $boostRounds to 0
 (set: $flagNum to 2)
 (set: $fromScene to &quot;Player Workout&quot;)
 (set: $boostRounds to $boostRounds - 1)
-(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="activity" position="998.3333333333334,1003" size="100,100">&lt;!--Player practicing..--&gt;
+(goto: &quot;Calculate Goal&quot;)</tw-passagedata><tw-passagedata pid="9" name="Player Practice" tags="activity" position="998,1003" size="100,100">&lt;!--Player practicing..--&gt;
 (if: $physicalShape &lt;= 90)[(set: $physicalShape to $physicalShape + 10)]
 (else:)[(set: $physicalShape to 100)]
 (if: $motivation &lt;= 90)[(set: $motivation to $motivation + 10)]
@@ -153,7 +153,7 @@ $boostRounds to 0
 (if: $goal &gt; 95)[(goto: &quot;End Game&quot;)]
 (else-if: $goal &lt; 10)[(goto: &quot;Fired&quot;)]
 (else-if: $loanRound &gt; $daysToReturn)[(goto: &quot;Fired&quot;)]
-(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2201.6666666666665,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
+(else:)[(goto: &quot;Reset flags&quot;)]</tw-passagedata><tw-passagedata pid="13" name="After Activity" tags="mainActivity" position="2201,403" size="100,100">$playerName: $ScouterName what would you like me to do now?
 (set: $fromScene to &quot;&quot;)
 (if: $isTired is false)[[[Get some rest..-&gt;Player Resting]]]
 (if: $isWorkout is false)[[[Go workout..-&gt;Player Workout]]]
@@ -250,6 +250,7 @@ $playerName: I was debating between these options, let me know what you think!
 
 $Helper Hi $ScouterName! I wanted to wish you good luck on your first day as an official scouter! Lets have a quick reminder on what&#39;s your mission as a scouter. First of all you&#39;ll have to recruit a new player, after you recruit the player you&#39;ll be able to guide your client through different activities. make sure you satisfy your client&#39;s needs.. if you&#39;re good enough you&#39;ll be able to achieve the goal and finish a successfull career with your client, be sloppy and you might find yourself getting fired..
 Don&#39;t forget to let your client play matches once in a while so you can gain money - if he wins..
+Important note: all the red arrows above the objects mean you can interact with them..
 Do you understand your goal?
 [[yes, let&#39;s do this! -&gt;First Call]]
 [[no, please explain to me a little more..-&gt;Further Explanation]]</tw-passagedata><tw-passagedata pid="28" name="Further Explanation" tags="" position="1006,267" size="100,100">$Helper Let&#39;s go into a little more details..
@@ -258,11 +259,11 @@ Second - After you recruit a player you&#39;ll see the player has 5 different ne
 Third - You can see at any given point what the goal score is, the player needs have an immediate effect on the goal score. get a high enough score and you finish your career successfully, reach a very low goal score and you&#39;ll get fired.
 Fourth - You can send your player on different activities which by turn will satisfy different needs depeneding on the activity chosen.
 Additionaly - every once in a while you&#39;ll be able to send your player on a match - win the match and you gain money, lose the match and you lose money.
-[[Ok, I get it now.. -&gt;First Call]]</tw-passagedata><tw-passagedata pid="29" name="Interaction Trainer" tags="" position="2640.0000000000005,1089.1666666666667" size="100,100">(if: $waitTime &lt; 3)[Hi, this feature isn&#39;t available yet.. $playerName needs more training..]
+[[Ok, I get it now.. -&gt;First Call]]</tw-passagedata><tw-passagedata pid="29" name="Interaction Trainer" tags="" position="2640,1089" size="100,100">(if: $waitTime &lt; 3)[Hi, this feature isn&#39;t available yet.. $playerName needs more training..]
 (else:)[Hi would you like to improve your players training program?[[Yes, please.. -&gt;Yes Intercation]]
 [[No, thanks.. -&gt;After Activity]]]
 
-</tw-passagedata><tw-passagedata pid="30" name="Yes Intercation" tags="" position="2646.666666666667,1299.1666666666665" size="100,100">(set: $moneyAmount to $moneyAmount - 100)
+</tw-passagedata><tw-passagedata pid="30" name="Yes Intercation" tags="" position="2646,1299" size="100,100">(set: $moneyAmount to $moneyAmount - 100)
 (set: $isUpgrade to true)
 (set: $boostRounds to 3)
 

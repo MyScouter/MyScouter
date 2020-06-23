@@ -1131,6 +1131,8 @@ Vars.boostRounds  = 0
 		yield return lineBreak();
 		yield return text("Don't forget to let your client play matches once in a while so you can gain money - if he wins..");
 		yield return lineBreak();
+		yield return text("Important note: all the red arrows above the objects mean you can interact with them..");
+		yield return lineBreak();
 		yield return text("Do you understand your goal?");
 		yield return lineBreak();
 		yield return link("yes, let's do this! ", "First Call", null);

@@ -12974,6 +12974,14 @@
                         "type": "br"
                     },
                     {
+                        "text": "Important note: all the red arrows above the objects mean you can interact with them..",
+                        "type": "text"
+                    },
+                    {
+                        "text": "\n",
+                        "type": "br"
+                    },
+                    {
                         "text": "Do you understand your goal?",
                         "type": "text"
                     },
